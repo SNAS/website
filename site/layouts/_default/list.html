@@ -1,0 +1,27 @@
+{{ partial "head" . }}
+{{ partial "nav" . }}
+<!--<div class="pv5 pv6-l ph3 bg-center cover" style="background-image: url(/img/{{.Params.image}})">-->
+<div class="pv5 pv6-l ph3 bg-center cover" style="background-image: url(/img/IMG_2531.jpg)">
+    <div class="mw7 center ph3">
+        <div class="db mb3">
+            <div class="mw7 relative bg-fix-primary mb3">
+                <h1 class="f2 f1-l b di lh-title mb3 white mw6 bg-primary">
+                    {{.Title}}
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="mw7 center">
+    <ul class="flex-ns flex-wrap mhn1-ns pa3">
+        {{ range .Data.Pages }}
+        <div class="w-50-ns ph1-ns flex">
+            {{ .Render "li"}}
+        </div>
+        {{ end }}
+    </ul>
+</div>
+
+{{ partial "footer" . }}
