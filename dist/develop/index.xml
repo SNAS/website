@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Develop-rss on Homepage</title>
+    <link>/develop/index.xml</link>
+    <description>Recent content in Develop-rss on Homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Mar 2017 15:04:10 +0000</lastBuildDate>
+    <atom:link href="/develop/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Requests and Issues</title>
+      <link>/develop/REQUESTS/</link>
+      <pubDate>Tue, 14 Mar 2017 15:04:10 +0000</pubDate>
+      
+      <guid>/develop/REQUESTS/</guid>
+      <description>&lt;p&gt;New feature requests can be submitted via GitHub.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Use label &lt;strong&gt;Enhancement&lt;/strong&gt; when submitting a new request via &lt;a href=&#34;https://github.com/OpenBMP/openbmp/issues/new&#34;&gt;OpenBMP in GitHub&lt;/a&gt;.
+Issues and questions can also be submitted there.
+Alternatively, you can always email Tim Evens at &lt;strong&gt;tim@openbmp.org&lt;/strong&gt; to make a request, suggestion, or comment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Building from Source</title>
+      <link>/develop/BUILD/</link>
+      <pubDate>Wed, 04 Jan 2017 15:04:10 +0000</pubDate>
+      
+      <guid>/develop/BUILD/</guid>
+      <description>&lt;p&gt;Openbmp is built and installed using &amp;lsquo;cmake&amp;rsquo; to build the makefiles.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;See the various requirements and suggested system configurations at &lt;a href=&#34;REQUIREMENTS.md&#34;&gt;Requirements&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;all-platforms-ubuntu-centos-etc&#34;&gt;All Platforms (Ubuntu, CentOS, etc.)&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;h4 id=&#34;you-must-install-depends-before-building-librdkafka-and-libyaml-cpp&#34;&gt;YOU MUST INSTALL DEPENDS BEFORE BUILDING librdkafka and libyaml-cpp&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;install-librdkafka-development-and-runtime-libraries&#34;&gt;Install librdkafka development and runtime libraries&lt;/h3&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://github.com/edenhill/librdkafka&#34;&gt;librdkafka&lt;/a&gt; for detailed instructions on how to install.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/edenhill/librdkafka.git
+cd librdkafka
+./configure
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;install-libyaml-cpp-development-and-runtime-libraries&#34;&gt;Install libyaml-cpp development and runtime libraries&lt;/h3&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://github.com/jbeder/yaml-cpp&#34;&gt;yaml-cpp&lt;/a&gt; for detailed instructions on how to install.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/jbeder/yaml-cpp.git
+cd yaml-cpp
+
+# IF on CentOS6/RHEL6, use the following command to checkout release 0.5.3
+#git checkout release-0.5.3
+
+# IF on CentOS6/RHEL6 - you might run into an issue about date_time boost lib. This issue
+#    is specific to cmake on centos6/rhel6.   If you run into this issue, you can
+#    safely run the below to resolve the issue. 
+#sed -i &#39;116,117 s/^/#/&#39; ../CMakeLists.txt
+
+mkdir build
+cd build
+cmake -DBUILD_SHARED_LIBS=OFF ..
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ubuntu-14-04&#34;&gt;Ubuntu 14.04&lt;/h2&gt;
+
+&lt;h3 id=&#34;install-ubuntu-14-04&#34;&gt;Install Ubuntu 14.04&lt;/h3&gt;
+
+&lt;p&gt;Install standard Ubuntu 14.04/Trusty server image &lt;a href=&#34;http://www.ubuntu.com/download&#34;&gt;Ubuntu Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;install-the-dependancies&#34;&gt;Install the dependancies&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install gcc g++ libboost-dev cmake zlib1g-dev libssl1.0.0 libsasl2-2 libssl-dev libsasl2-dev 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;rhel7-centos7&#34;&gt;RHEL7/CentOS7&lt;/h2&gt;
+
+&lt;h3 id=&#34;install-rhel7-or-centos-7&#34;&gt;Install RHEL7 or CentOS 7.&lt;/h3&gt;
+
+&lt;p&gt;We use CentOS 7 minimal.  &lt;a href=&#34;http://www.centos.org/download/&#34;&gt;CentOS 7 Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;install-basic-dependancies&#34;&gt;Install basic dependancies&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo yum install -y gcc gcc-c++ libstdc++-devel boost-devel cmake git wget openssl-libs openssl-devel cyrus-sasl-devel cyrus-sasl-lib
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;rhel6-centos6-6-5-legacy-support&#34;&gt;RHEL6/CentOS6 (6.5) - Legacy support&lt;/h2&gt;
+
+&lt;h3 id=&#34;install-rhel6-or-centos-6&#34;&gt;Install RHEL6 or CentOS 6.&lt;/h3&gt;
+
+&lt;p&gt;We use CentOS 6 minimal.  &lt;a href=&#34;http://wiki.centos.org/Download&#34;&gt;CentOS 6 Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;install-basic-dependancies-1&#34;&gt;Install basic dependancies&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo yum install -y gcc gcc-c++ libstdc++-devel boost-devel boost-static cmake git wget  openssl-libs openssl-devel cyrus-sasl-devel cyrus-sasl-devel cyrus-sasl-lib
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;compiling-source-all-platforms&#34;&gt;Compiling Source (All Platforms)&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;h4 id=&#34;important&#34;&gt;IMPORTANT&lt;/h4&gt;
+
+&lt;p&gt;Make sure you have installed librdkafka development and runtime libs as mentioned under all platforms above.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Do the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/OpenBMP/openbmp.git
+cd openbmp
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ../  
+make
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;example-output&#34;&gt;Example output&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;localadmin@toolServer:/ws/ws-openbmp/openbmp/build$ cmake ../
+-- The C compiler identification is GNU 4.8.2
+-- The CXX compiler identification is GNU 4.8.2
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Boost version: 1.54.0
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libssl.so;/usr/lib/x86_64-linux-gnu/libcrypto.so (found suitable version &amp;quot;1.0.1f&amp;quot;, minimum required is &amp;quot;1&amp;quot;)
+-- Performing Test SUPPORTS_STD_CXX11
+-- Performing Test SUPPORTS_STD_CXX11 - Success
+-- Performing Test SUPPORTS_STD_CXX01
+-- Performing Test SUPPORTS_STD_CXX01 - Success
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /ws/ws-openbmp/openbmp/build
+
+localadmin@toolServer:/ws/ws-openbmp/openbmp/build$ make
+Scanning dependencies of target openbmpd
+[  5%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/bmp/BMPListener.cpp.o
+[ 10%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/bmp/BMPReader.cpp.o
+[ 15%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/kafka/MsgBusImpl_kafka.cpp.o
+[ 20%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/kafka/KafkaEventCallback.cpp.o
+[ 25%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/kafka/KafkaDeliveryReportCallback.cpp.o
+[ 30%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/openbmp.cpp.o
+[ 35%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/bmp/parseBMP.cpp.o
+[ 40%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/md5.cpp.o
+[ 45%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/Logger.cpp.o
+[ 50%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/client_thread.cpp.o
+[ 55%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/bgp/parseBGP.cpp.o
+[ 60%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/bgp/NotificationMsg.cpp.o
+[ 65%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/bgp/OpenMsg.cpp.o
+[ 70%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/bgp/UpdateMsg.cpp.o
+[ 75%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/bgp/MPReachAttr.cpp.o
+[ 80%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/bgp/MPUnReachAttr.cpp.o
+[ 85%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/bgp/ExtCommunity.cpp.o
+[ 90%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/bgp/linkstate/MPLinkState.cpp.o
+[ 95%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/bgp/linkstate/MPLinkStateAttr.cpp.o
+[100%] Building CXX object Server/CMakeFiles/openbmpd.dir/src/kafka/KafkaPeerPartitionerCallback.cpp.o
+Linking CXX executable openbmpd
+[100%] Built target openbmpd
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Binary will be located under &lt;strong&gt;Server/&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;install-all-platforms&#34;&gt;Install (All Platforms)&lt;/h2&gt;
+
+&lt;p&gt;Run: &lt;strong&gt;sudo&lt;/strong&gt; make install&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;this will install openbmpd in /usr/bin/ by default.  You should be able to type &lt;strong&gt;openbmpd&lt;/strong&gt; now to get the usage help.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;ubuntu@bmp-dev:~/test/openbmp/build$ sudo make install
+[100%] Built target openbmpd
+Install the project...
+-- Install configuration: &amp;quot;&amp;quot;
+-- Installing: /usr/bin/openbmpd
+-- Installing: /etc/init/openbmpd.conf
+-- Installing: /etc/default/openbmpd
+-- Installing: /etc/init.d/openbmpd
+-- Installing: /etc/logrotate.d/openbmpd
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Consumer Developer Integration</title>
+      <link>/develop/CONSUMER_DEVELOPER_INTEGRATION/</link>
+      <pubDate>Wed, 04 Jan 2017 15:04:10 +0000</pubDate>
+      
+      <guid>/develop/CONSUMER_DEVELOPER_INTEGRATION/</guid>
+      <description>&lt;p&gt;Developers can now integrate with the real-time message stream of both &lt;strong&gt;parsed&lt;/strong&gt; messages and &lt;strong&gt;BMP raw&lt;/strong&gt; binary data.   The openbmp collector is an Apache Kafka producer that produces real-time. Any application wishing to access the live stream can do so by simply creating an Apache Kafka consumer.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href=&#34;MESSAGE_BUS_API.md&#34;&gt;Message Bus API Specification&lt;/a&gt; for details on the API specification.&lt;/p&gt;
+
+&lt;p&gt;Alternatively, the developer can interact with the MySQL database via the openbmp-mysql-consumer.  See &lt;a href=&#34;http://www.openbmp.org/#!docs/DB_SCHMEA.md&#34;&gt;DB_SCHEMA&lt;/a&gt; for more details.&lt;/p&gt;
+
+&lt;h2 id=&#34;reasons-for-using-apache-kafka&#34;&gt;Reasons for using Apache Kafka&lt;/h2&gt;
+
+&lt;h3 id=&#34;problem-without-message-bus&#34;&gt;Problem without Message Bus&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Direct MySQL integration into the collector is too specific for other products to integrate with&lt;/li&gt;
+&lt;li&gt;Parsed data into MySQL didn&amp;rsquo;t support Real-Time monitoring/alerting&lt;/li&gt;
+&lt;li&gt;BMP binary streams were not well suited for MySQL&lt;/li&gt;
+&lt;li&gt;Supporting multiple consuming destinations would require the collector to be aware of the multiple destinations and tracking them&lt;/li&gt;
+&lt;li&gt;Supporting multiple destination formats, such as MySQL, MongoDB, Cassandra, flat files/logging, etc. would be code intrusive to the collector, requiring it to be rebuilt and restarted&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;base-requirements-for-a-message-bus&#34;&gt;Base Requirements for a Message Bus&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;UTF-8/binary&lt;/li&gt;
+&lt;li&gt;Messages per second &amp;gt;= 20K per broker node&lt;/li&gt;
+&lt;li&gt;Message sizes &amp;lt;= 256K bytes&lt;/li&gt;
+&lt;li&gt;Clustering of broker nodes to support messages per second &amp;gt;= 500K&lt;/li&gt;
+&lt;li&gt;Producer queue must support ability for one message to be delivered to multiple consumers (broadcast/fanout)&lt;/li&gt;
+&lt;li&gt;Producer queue must support the ability to be &amp;ldquo;sticky&amp;rdquo; in terms of load balancing (cannot just do round robin per message)&lt;/li&gt;
+&lt;li&gt;Must include a fully functional open source broker (cannot depend on vendor/specific product(s))&lt;/li&gt;
+&lt;li&gt;Multiple client language support (C/C++, Java, Python, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Must support consumers of different consumption rates. Not all consumers are equal in terms of their ability to consume messages at the rate they are being produced&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;why-not-use-amqp&#34;&gt;Why Not use AMQP?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RabbitMQ doesn&amp;rsquo;t do a good job of supporting AMQP version 1.0, which includes lack of client API&amp;rsquo;s&lt;/li&gt;
+&lt;li&gt;Qpid does support AMQP 1.0 but the API&amp;rsquo;s are a bit clumsy.  Qpid messaging API supports AMQP 0.10 and 0.9.1 but not 1.0.   Proton supports 0.10 and 1.0 but not 0.9.1&lt;/li&gt;
+&lt;li&gt;Proton AMQP 1.0 does work with RabbitMQ experimental plugin, but RabbitMQ&amp;rsquo;s implementation is very poor in terms of the management API (no tracking of connections since AMQP 1.0 does not define channels/exchanges like 0.9.1 did).  QPid has a better implementation of 1.0 in terms of tracking and management&amp;hellip; but qpid is not as easy to install as RabbitMQ&lt;/li&gt;
+&lt;li&gt;RabbitMQ-c  API only supports 0.9.1, which doesn&amp;rsquo;t work with QPid java broker SASL authentication. Maintainer of RabbitMQ-c mentions he only validates/tests with RabbitMQ&lt;/li&gt;
+&lt;li&gt;Throughput tests showed that RabbitMQ and Qpid were roughly the same.  A single node can handle about 20K messages per second (1 producer and 1 to 2 consumers)&lt;/li&gt;
+&lt;li&gt;AMQP 1.0 is standard but Pivotal/RabbitMQ is causing confusion by keeping 0.9.1 alive, which is not compatible with 1.0&lt;/li&gt;
+&lt;li&gt;RabbitMQ and QPid do not support consumers at different rates well&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;key-reasons-to-use-apache-kafka&#34;&gt;Key Reasons to use Apache Kafka&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Open source and current&lt;/li&gt;
+&lt;li&gt;Has multiple client language API’s (librdkafka works well for C/C++)&lt;/li&gt;
+&lt;li&gt;Supports over 100K messages per second (producer with consumer) on a single node and supports millions of messages per second with cluster&lt;/li&gt;
+&lt;li&gt;Meets requirements plus more&lt;/li&gt;
+&lt;li&gt;Supports varying consumer rates by allowing the customer to track where it is in the queue/offset&lt;/li&gt;
+&lt;li&gt;Uses disk for persistence and message&lt;/li&gt;
+&lt;li&gt;Consumers can be restarted and resume where they left off&lt;/li&gt;
+&lt;li&gt;Producer can control load balancing by partition selection&lt;/li&gt;
+&lt;li&gt;Consumers can control if they should be load balanced or not (same group)&lt;/li&gt;
+&lt;li&gt;Easy install and good documentation&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Requirements</title>
+      <link>/develop/REQUIREMENTS/</link>
+      <pubDate>Wed, 04 Jan 2017 15:04:10 +0000</pubDate>
+      
+      <guid>/develop/REQUIREMENTS/</guid>
+      <description>&lt;p&gt;Various requirements and suggested system configurations for runtime and build installs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;runtime-when-running-openbmpd-and-mysql&#34;&gt;Runtime &lt;em&gt;(When running openbmpd and mysql)&lt;/em&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;database&#34;&gt;Database&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MySQL 5.5.17 or MairaDB 5.5 Series or greater&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;shared-libraries&#34;&gt;Shared Libraries&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MySQL/MariaDB C++ Connector version 1.1.0 or greater&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MySQL/MariaDB Client libraries version 5.5 or greater&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;libstdc++6 Version 4.6.x or greater&lt;/strong&gt;  (gcc version 4.6.x or greater)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;MariaDB should work, but this has not been tested yet.  Testing will be performed for CentOS7/RHEL7 installs.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;server-requirements&#34;&gt;Server Requirements&lt;/h2&gt;
+
+&lt;p&gt;It is recommended to use the following server configuration&lt;/p&gt;
+
+&lt;h3 id=&#34;openbmpd&#34;&gt;Openbmpd&lt;/h3&gt;
+
+&lt;p&gt;Openbmpd is not disk or memory heavy.  Therefore the VM itself doesn&amp;rsquo;t have to have a lot of disk or memory.  The key is CPU, which normally 2 vCPU&amp;rsquo;s are sufficient, but in large environments with many routers it is recommended to have more vCPU&amp;rsquo;s.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Arch&lt;/th&gt;
+&lt;th&gt;vCPU&lt;/th&gt;
+&lt;th&gt;RAM&lt;/th&gt;
+&lt;th&gt;DISK&lt;/th&gt;
+&lt;th&gt;DISK TYPE&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;VM x86_64&lt;/td&gt;
+&lt;td&gt;2 or more&lt;/td&gt;
+&lt;td&gt;2G or more&lt;/td&gt;
+&lt;td&gt;10G or more&lt;/td&gt;
+&lt;td&gt;Any&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;mysql-mariadb-db&#34;&gt;MySQL/MariaDB DB&lt;/h3&gt;
+
+&lt;p&gt;The database is CPU, memory, and disk intensive. It&amp;rsquo;s recommended that the DB server be as large as you can afford.  The size is directly related to the number of prefixes/data being stored, not how many peers or routers are being monitored. If you are monitoring routers with full internet routing tables (many peers) then the below is the recommended minimum for the DB server.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Arch&lt;/th&gt;
+&lt;th&gt;vCPU&lt;/th&gt;
+&lt;th&gt;RAM&lt;/th&gt;
+&lt;th&gt;DISK&lt;/th&gt;
+&lt;th&gt;DISK TYPE&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;VM x86_64&lt;/td&gt;
+&lt;td&gt;8 or more&lt;/td&gt;
+&lt;td&gt;16G or more&lt;/td&gt;
+&lt;td&gt;60G or more&lt;/td&gt;
+&lt;td&gt;SSD or SAN&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Openbmpd can coexist on the same server as the DB.  If you run openbmpd and the DB on the same box, then it&amp;rsquo;s okay to use the above for both.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;build-development-when-compiling-and-building-openbmpd-from-source&#34;&gt;BUILD/Development - &lt;em&gt;(When compiling and building openbmpd from source)&lt;/em&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;database-same-as-runtime-requirement&#34;&gt;Database &lt;em&gt;(same as runtime requirement)&lt;/em&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MySQL 5.5.17 or MairaDB 5.5 Series or greater&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;shared-libraries-same-as-runtime-plus-extras-for-development&#34;&gt;Shared Libraries &lt;em&gt;(same as runtime plus extras for development)&lt;/em&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MySQL/MariaDB C++ Connector version 1.1.0 or greater&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MySQL/MariaDB Client libraries version 5.5 or greater&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;libstdc++6 Version 4.6.x or greater&lt;/strong&gt;  (gcc version 4.6.x or greater)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;development-libraries-and-headers&#34;&gt;Development Libraries and Headers&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Boost Headers 0.41.0&lt;/strong&gt; or greater&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gcc/G++/STDC++ 4.6.x&lt;/strong&gt; or greater&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MySQL Client development headers/lib 5.5.x&lt;/strong&gt; or greater&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MySQL C++ connector development headers/lib 1.1.0&lt;/strong&gt; or greater&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CMake 2.8.x&lt;/strong&gt; or greater&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;MariaDB should work development but this has not been tested yet.  Testing will be done
+when CentOS 7/RHEL 7 builds are ready.  Please send &lt;strong&gt;tim@openbmp.org&lt;/strong&gt; an email if you would like CentOS/RHEL support sooner.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deploy-rss on Homepage</title>
+    <link>/deploy/index.xml</link>
+    <description>Recent content in Deploy-rss on Homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Jan 2017 15:04:10 +0000</lastBuildDate>
+    <atom:link href="/deploy/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Getting Started</title>
+      <link>/deploy/GETTING_STARTED/</link>
+      <pubDate>Wed, 04 Jan 2017 15:04:10 +0000</pubDate>
+      
+      <guid>/deploy/GETTING_STARTED/</guid>
+      <description>&lt;p&gt;You can start using OpenBMP without any BGP feeds of your own. We provide you an application that downloads publicly available bgp data from RouteViews which you can immediately visualize using OpenBMP UI.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;step-1-install-aio-container&#34;&gt;Step 1: Install AIO Container&lt;/h2&gt;
+
+&lt;p&gt;Go to OpenBMP github repository: &lt;strong&gt;&lt;a href=&#34;https://github.com/OpenBMP&#34;&gt;https://github.com/OpenBMP&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Click on docker directory: &lt;strong&gt;&lt;a href=&#34;https://github.com/OpenBMP/docker&#34;&gt;https://github.com/OpenBMP/docker&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Click on aio directory: &lt;strong&gt;&lt;a href=&#34;https://github.com/OpenBMP/docker/tree/master/aio&#34;&gt;https://github.com/OpenBMP/docker/tree/master/aio&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;aio is the all-in-one container that includes all the main components of OpenBMP: bmp collector, database, consumer that reads the data from the message bus and writes to the database, message bus, database api service, and RPKI validator.&lt;/p&gt;
+
+&lt;p&gt;Follow directions in this directory.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-2-install-openbmp-ui&#34;&gt;Step 2: Install OpenBMP UI&lt;/h2&gt;
+
+&lt;p&gt;Go to OpenBMP github repository: &lt;strong&gt;&lt;a href=&#34;https://github.com/OpenBMP&#34;&gt;https://github.com/OpenBMP&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Click on docker directory: &lt;strong&gt;&lt;a href=&#34;https://github.com/OpenBMP/docker&#34;&gt;https://github.com/OpenBMP/docker&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Click on aio directory: &lt;strong&gt;&lt;a href=&#34;https://github.com/OpenBMP/docker/tree/master/ui&#34;&gt;https://github.com/OpenBMP/docker/tree/master/ui&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;OpenBMP UI is installed in its own container.&lt;/p&gt;
+
+&lt;p&gt;Follow directions in this directory.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-3-install-mrt2bmp-application&#34;&gt;Step 3: Install MRT2BMP Application&lt;/h2&gt;
+
+&lt;p&gt;Go to OpenBMP github repository: &lt;strong&gt;&lt;a href=&#34;https://github.com/OpenBMP&#34;&gt;https://github.com/OpenBMP&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Click on openbmp-mrt2bmp directory: &lt;strong&gt;&lt;a href=&#34;https://github.com/OpenBMP/openbmp-mrt2bmp&#34;&gt;https://github.com/OpenBMP/openbmp-mrt2bmp&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;mrt2bmp application allows you to download BGP data from RouteViews and send it to openbmp collector. The application downloads data from RouteViews every 15 minutes (the frequency in which RouteViews make the data available for download).&lt;/p&gt;
+
+&lt;h3 id=&#34;happy-browsing&#34;&gt;Happy Browsing!!!&lt;/h3&gt;
+
+&lt;p&gt;Login to OpenBMP UI and start browsing!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>My Longer Deploy Title</title>
+      <link>/deploy/_index/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/deploy/_index/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
