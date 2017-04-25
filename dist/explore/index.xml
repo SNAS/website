@@ -1,108 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Explore-rss on Homepage</title>
-    <link>/explore/index.xml</link>
-    <description>Recent content in Explore-rss on Homepage</description>
+    <title>Explore SNAS on Homepage</title>
+    <link>/explore/</link>
+    <description>Recent content in Explore SNAS on Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Jan 2017 15:04:10 +0000</lastBuildDate>
-    <atom:link href="/explore/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Feb 2017 15:04:10 +0000</lastBuildDate>
+    
+	<atom:link href="/explore/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started</title>
+      <link>/explore/getting_started/</link>
+      <pubDate>Sat, 04 Feb 2017 15:04:10 +0000</pubDate>
+      
+      <guid>/explore/getting_started/</guid>
+      <description>&lt;p&gt;You can start using OpenBMP without any BGP feeds of your own. We provide you an application that downloads publicly available bgp data from RouteViews which you can immediately visualize using OpenBMP UI.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Examples</title>
-      <link>/explore/EXAMPLES/</link>
+      <link>/explore/examples/</link>
       <pubDate>Wed, 04 Jan 2017 15:04:10 +0000</pubDate>
       
-      <guid>/explore/EXAMPLES/</guid>
+      <guid>/explore/examples/</guid>
       <description>&lt;p&gt;Below are some examples using both the OpenBMP UI and CLI command line mysql client.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;As described in the documentation, the database is standard SQL and any ODBC or native driver and tool can be used.  Reporting tools like Business Objects, Jasper, &amp;hellip; can be used.&lt;/p&gt;
-
-&lt;p&gt;The UI uses the OpenBMP API, which is using the MySQL backend.&lt;/p&gt;
-
-&lt;h1 id=&#34;ui-screenshots&#34;&gt;UI Screenshots&lt;/h1&gt;
-
-&lt;h2 id=&#34;top-20-prefixes-updated-and-withdrawn&#34;&gt;Top 20 Prefixes updated and withdrawn&lt;/h2&gt;
-
-&lt;p&gt;Time period customizable
-&lt;img src=&#34;images/top20.png&#34; alt=&#34;&#34; title=&#34;Top 20 prefixes updated/withdrawn&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;peer-info&#34;&gt;Peer Info&lt;/h2&gt;
-
-&lt;p&gt;Similar to &lt;code&gt;show bgp neighbor&lt;/code&gt;, which includes the TCP session and capabilities
-&lt;img src=&#34;images/peer_info.png&#34; alt=&#34;&#34; title=&#34;Peer Info&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;security-analysis&#34;&gt;Security Analysis&lt;/h2&gt;
-
-&lt;p&gt;Report received origin of prefixes to RPKI and IRR.  IRR data is downloaded once a day.  RPKI is continually updated every few minutes.
-&lt;img src=&#34;images/security_report.png&#34; alt=&#34;&#34; title=&#34;Security Analysis&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;images/rpki_drill_down.png&#34; alt=&#34;&#34; title=&#34;RPKI drill down&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;bgp-ls&#34;&gt;BGP-LS&lt;/h2&gt;
-
-&lt;p&gt;BGP-LS provides the link-state topology for either IS-IS and/or OSPF.  SPF&amp;rsquo;s are run per router to build the topology and routing tables.  Run path traces, including the ability to run them with constraints, such as what if this router link didn&amp;rsquo;t exist or what if one was added&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;images/linkstate_topo_geo.png&#34; alt=&#34;&#34; title=&#34;link-state topo with geo&#34; /&gt;
-&lt;img src=&#34;images/linkstate_map_traces.png&#34; alt=&#34;&#34; title=&#34;link-state map path trace&#34; /&gt;
-&lt;img src=&#34;images/linkstate_SPF_and_traces.png&#34; alt=&#34;&#34; title=&#34;link-state spf and path trace&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;as-analysis&#34;&gt;AS Analysis&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;images/as_view.png&#34; alt=&#34;&#34; title=&#34;AS View&#34; /&gt;
-&lt;img src=&#34;images/as_view_up_down.png&#34; alt=&#34;&#34; title=&#34;AS Upstream/downstream&#34; /&gt;
-&lt;img src=&#34;images/as_by_prefix_summary.png&#34; alt=&#34;&#34; title=&#34;AS prefix summary&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;rib&#34;&gt;RIB&lt;/h2&gt;
-
-&lt;p&gt;Routing table is maintained per BGP peer (pre and post policy)
-&lt;img src=&#34;images/routing_table.png&#34; alt=&#34;&#34; title=&#34;Routing table&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Per peer Pre and Post policy metrics are tracked over time
-&lt;img src=&#34;images/Pre_post_stats.png&#34; alt=&#34;&#34; title=&#34;Peer pre/post policy stats&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;View the history of any prefix.
-&lt;img src=&#34;images/prefix_history.png&#34; alt=&#34;&#34; title=&#34;Prefix history&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Per peer updates over time
-&lt;img src=&#34;images/updates_overtime.png&#34; alt=&#34;&#34; title=&#34;Updates&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Per peer withdrawals over time
-&lt;img src=&#34;images/withdraws_overtime.png&#34; alt=&#34;&#34; title=&#34;Withdraws&#34; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;mysql-client&#34;&gt;MySQL Client&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Routes Example&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;images/routes-shell.png&#34; alt=&#34;&#34; title=&#34;Routes image&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;MySQL [openBMP]&amp;gt; select RouterName,PeerName,Prefix,PrefixLen,Origin,Origin_AS,MED,LocalPref,NH,AS_Path from routes where prefix like &#39;24.50.20%&#39;;
-+-------------+----------+-------------+-----------+------------+-----------+------+-----------+-------------+-----------------------------------------------------------------+
-| RouterName  | PeerName | Prefix      | PrefixLen | Origin     | Origin_AS | MED  | LocalPref | NH          | AS_Path                                                         |
-+-------------+----------+-------------+-----------+------------+-----------+------+-----------+-------------+-----------------------------------------------------------------+
-| tievens-csr | sp-asrk1 | 24.50.20.0  |        24 | igp        |      1246 |    0 |       100 | 10.32.0.254 |  65109 64530 109 701 3356 26801 1246                            |
-| tievens-csr | sp-asrk1 | 24.50.208.0 |        20 | incomplete |     14638 |    0 |       100 | 10.32.0.254 |  65109 64530 109 7018 11992 14638 14638 14638 14638 14638 14638 |
-+-------------+----------+-------------+-----------+------------+-----------+------+-----------+-------------+-----------------------------------------------------------------+
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;Routes History Example&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;images/routes-history-shell.png&#34; alt=&#34;&#34; title=&#34;Routes history image&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;MySQL [openBMP]&amp;gt; select RouterName,PeerName,Prefix,PrefixLen,Origin,Origin_AS,MED,LocalPref,NH,AS_Path,LastModified  from routes_history where prefix = &#39;24.50.208.0&#39; order by LastModified Desc;
-+-------------+----------+-------------+-----------+------------+-----------+------+-----------+-------------+----------------------------------------------------------------------+---------------------+
-| RouterName  | PeerName | Prefix      | PrefixLen | Origin     | Origin_AS | MED  | LocalPref | NH          | AS_Path                                                              | LastModified        |
-+-------------+----------+-------------+-----------+------------+-----------+------+-----------+-------------+----------------------------------------------------------------------+---------------------+
-| tievens-csr | sp-asrk1 | 24.50.208.0 |        20 | incomplete |     14638 |    0 |       100 | 10.32.0.254 |  65109 64530 109 7018 11992 14638 14638 14638 14638 14638 14638      | 2014-06-14 13:40:24 |
-| tievens-csr | sp-asrk1 | 24.50.208.0 |        20 | incomplete |     14638 |    0 |       100 | 10.32.0.254 |  65109 64530 109 701 12956 12956 12956 12956 12956 12956 12956 14638 | 2014-06-14 08:02:25 |
-| tievens-csr | sp-asrk1 | 24.50.208.0 |        20 | incomplete |     14638 |    0 |       100 | 10.32.0.254 |  65109 64530 109 7018 12956 14638                                    | 2014-05-29 22:24:59 |
-+-------------+----------+-------------+-----------+------------+-----------+------+-----------+-------------+----------------------------------------------------------------------+---------------------+
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

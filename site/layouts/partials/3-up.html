@@ -1,0 +1,46 @@
+<div class="bg-off-white pv4">
+    <div class="ph3 mw7 center">
+        <h2 class="f2 b lh-title mb2">{{.heading}}</h2>
+        <p class="mb4 mw9">{{.description}}</p>
+        <!--<p class="w-60-l mb0">{{.description}}</p>-->
+
+        <div class="flex-ns mhn2-ns mb3">
+            <div class="ph2-ns w-50-ns">
+                <img src="{{.svg1}}" alt="" class="center db mb3" style="width: 240px">
+                <p>{{.text1}}</p>
+                {{ if .buttonText1 }}
+                <div class="tc">
+                    <a href="{{.buttonLink1}}" class="btn raise">{{.buttonText1}}</a>
+                </div>
+                {{ end }}
+            </div>
+
+            <div class="ph2-ns w-50-ns">
+                <img src="{{.svg2}}" alt="" class="center db mb3" style="width: 240px">
+                <p>{{.text2}}</p>
+                {{ if .buttonText2 }}
+                <div class="tc">
+                    <a href="{{.buttonLink2}}" class="btn raise">{{.buttonText2}}</a>
+                </div>
+                {{ end }}
+            </div>
+
+            <div class="ph2-ns w-50-ns">
+                <img src="{{.svg3}}" alt="" class="center db mb3" style="width: 240px">
+                <p>{{.text3}}</p>
+                {{ if .buttonText3 }}
+                <div class="tc">
+                    <a href="{{.buttonLink3}}" class="btn raise">{{.buttonText3}}</a>
+                </div>
+                {{ end }}
+            </div>
+
+        </div>
+
+        {{ if .buttonText4 }}
+        <div class="tc">
+            <a href="{{.buttonLink4}}" class="btn raise">{{.buttonText4}}</a>
+        </div>
+        {{ end }}
+    </div>
+</div>
