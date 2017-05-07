@@ -1,4 +1,4 @@
 ---
 title: Documentation
-image: IMG_3741.jpg
+image: background_image_01-01.png
 ---
