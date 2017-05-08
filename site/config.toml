@@ -2,3 +2,51 @@ baseurl = "/"
 languageCode = "en-us"
 title = "Homepage"
 pluralizelisttitles = false
+
+
+[Params.jumbotron]
+    image_url = "/img/background_image_01-01.png"
+    title = "What would you do if you had..."
+    subtitle = "Real-time IP routing data at your fingertips?"
+
+
+[Params.short_text]
+    heading = "SNAS"
+    text = "Streaming Network Analytics System (SNAS) is a framework to collect, track and access tens of millions of routing objects (routers, peers, prefixes) in real time."
+
+[Params.three_up]
+    heading = "Interact, visualize and analyze BGP data"
+    description = "All BGP packets are pre-parsed by the snas collector and can be accessed via centralized APIs. Distributed, low foot print collector leveraging a high performing message bus make it possible for real time streaming analytics."
+
+    svg1 = "img/icons2/interact-01.svg"
+    text1 = "Interact directly with Kafka to monitor prefixes in real time or use the database to access routing tables, as paths and more."
+    button_text1 = "Interact"
+    button_link1 = "/streaming"
+
+    svg2 = "/img/icons2/Visualize-01.svg"
+    text2 = "Visualize routers, peers, stability reports, prefix history, as paths, network topology and more using the extendible user interface."
+    button_text2 = "Visualize"
+    button_link2 = "/streaming"
+
+    svg3 = "/img/icons2/Analyse_01.svg"
+    text3 = "Analyze prefix attributes, segment routing, IGP topologies and more via the message bus or by accessing the stateful database."
+    button_text3 = "Analyze"
+    button_link3 = "/streaming"
+
+[Params.text_and_image_snas]
+    heading = "Get Started"
+    text = "You can start using SNAS without any BGP feed of your own! We provide an application that downloads publicly available bgp data which you can immediately visualize using SNAS UI."
+    button_text = "Start Now"
+    button_link = "/about"
+
+[Params.two_up]
+    heading = "Developer Integration"
+    description = "Integrate your existing applications and management framework or write a new application using standard Kafka message bus, native and RESTful database APIs."
+    svg1 = "img/icons2/Message_Bus-01.svg"
+    text1 = "Message Bus Integration gives direct access to data produced by the collector. Snas provides a utility to make Message Bus topic structure customizable. Tools like kafkacat makes it very easy to expriment with data integration."
+    button_text1 = "Read More"
+    button_link1 = "/streaming "
+    svg2 = "/img/icons2/Database_API-01.svg"
+    text2 = "Native or RESTful integration with the database gives you access to raw as well as analyzed data. The database is optimized to provide very fast response to most commonly needed analytics."
+    button_text2 = "Read More"
+    button_link2 = "/streaming"
