@@ -1,43 +1,37 @@
 ---
-title: "Architecture"
+title: "SNAS Architecture"
 type: "develop"
-date: 2017-02-03T15:04:10.000Z
+date: 2017-05-07T15:04:10.000Z
 ---
 
-    SNAS streams data from the network using a high performance collector. 
+The main architectural components of the SNAS framework are:  
+  
+A high speed, low foot print collector, a high performance message bus, consumer applications, database, APIs and user applications
+        
+<!--more-->
+
+## Flow
+
+SNAS streams data from the network using a high performance collector. 
     The collector produces the parsed (and raw) BMP data to Kafka message bus 
     using a customizable topic structure.
-    Consumer applications can access to data using regular Kafka APIs.
+    
+![](/img/arch1.svg)
+
+Consumer applications can access to data using regular Kafka APIs.
     One of these consumers is called mysql-consumer and is responsible for
     storing the data in a mysql/mariadb database. Applications can access
     the data in the database either using the RESTful API or natively.
-        
-## SNAS Flow
+    
+## Architecture Diagram
 
-![](/img/snas-arch1.png)
+![](/img/arch2-1.svg)
 
-Go to OpenBMP github repository: **https://github.com/OpenBMP**
+## Application Integration (Database)
 
-Click on docker directory: **https://github.com/OpenBMP/docker**
+![](/img/arch2-2.svg)
 
-Click on aio directory: **https://github.com/OpenBMP/docker/tree/master/aio**
+## Application Integration (Message Bus)
 
-aio is the all-in-one container that includes all the main components of OpenBMP: bmp collector, database, consumer that reads the data from the message bus and writes to the database, message bus, database api service, and RPKI validator.
-
-Follow directions in this directory.
-
-## Architecture I
-
-Go to OpenBMP github repository: **https://github.com/OpenBMP**
-
-Click on docker directory: **https://github.com/OpenBMP/docker**
-
-Click on aio directory: **https://github.com/OpenBMP/docker/tree/master/ui**
-
-OpenBMP UI is installed in its own container. 
-
-Follow directions in this directory.
-
-
-
+![](/img/arch2-3.svg)
 
