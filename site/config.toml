@@ -21,17 +21,17 @@ pluralizelisttitles = false
     svg1 = "img/icons2/interact-01.svg"
     text1 = "Interact directly with Kafka to monitor prefixes in real time or use the database to access routing tables, as paths and more."
     button_text1 = "Interact"
-    button_link1 = "/streaming"
+    button_link1 = "/interact"
 
     svg2 = "/img/icons2/Visualize-01.svg"
     text2 = "Visualize routers, peers, stability reports, prefix history, as paths, network topology and more using the extendible user interface."
     button_text2 = "Visualize"
-    button_link2 = "/streaming"
+    button_link2 = "/visualize"
 
     svg3 = "/img/icons2/Analyse_01.svg"
     text3 = "Analyze prefix attributes, segment routing, IGP topologies and more via the message bus or by accessing the stateful database."
     button_text3 = "Analyze"
-    button_link3 = "/streaming"
+    button_link3 = "/analyze"
 
 [Params.text_and_image_snas]
     heading = "Get Started"
