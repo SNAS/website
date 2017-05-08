@@ -37,7 +37,7 @@ pluralizelisttitles = false
     heading = "Get Started"
     text = "You can start using SNAS without any BGP feed of your own! We provide an application that downloads publicly available bgp data which you can immediately visualize using SNAS UI."
     button_text = "Start Now"
-    button_link = "/about"
+    button_link = "/gettingstarted"
 
 [Params.two_up]
     heading = "Developer Integration"
