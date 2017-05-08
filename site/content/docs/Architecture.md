@@ -1,13 +1,20 @@
 ---
 title: "Architecture"
+type: "develop"
 date: 2017-02-03T15:04:10.000Z
 ---
 
-You can start using OpenBMP without any BGP feeds of your own. We provide you an application that downloads publicly available bgp data from RouteViews which you can immediately visualize using OpenBMP UI.
+    SNAS streams data from the network using a high performance collector. 
+    The collector produces the parsed (and raw) BMP data to Kafka message bus 
+    using a customizable topic structure.
+    Consumer applications can access to data using regular Kafka APIs.
+    One of these consumers is called mysql-consumer and is responsible for
+    storing the data in a mysql/mariadb database. Applications can access
+    the data in the database either using the RESTful API or natively.
+        
+## SNAS Flow
 
-<!--more-->
-
-## Step 1: Install AIO Container
+![](/img/snas-arch1.png)
 
 Go to OpenBMP github repository: **https://github.com/OpenBMP**
 
@@ -19,8 +26,7 @@ aio is the all-in-one container that includes all the main components of OpenBMP
 
 Follow directions in this directory.
 
-## Step 2: Install OpenBMP UI
-
+## Architecture I
 
 Go to OpenBMP github repository: **https://github.com/OpenBMP**
 
@@ -32,17 +38,6 @@ OpenBMP UI is installed in its own container.
 
 Follow directions in this directory.
 
-## Step 3: Install MRT2BMP Application
-
-Go to OpenBMP github repository: **https://github.com/OpenBMP**
-
-Click on openbmp-mrt2bmp directory: **https://github.com/OpenBMP/openbmp-mrt2bmp**
-
-mrt2bmp application allows you to download BGP data from RouteViews and send it to openbmp collector. The application downloads data from RouteViews every 15 minutes (the frequency in which RouteViews make the data available for download). 
-
-### Happy Browsing!!!
-
-Login to OpenBMP UI and start browsing!
 
 
 

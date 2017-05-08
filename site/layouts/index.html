@@ -8,7 +8,11 @@
 
 {{ partial "3-up" .Site.Params.three_up }}
 
+<<<<<<< Updated upstream
 {{ partial "text-and-image-snas" .Site.Params.text_and_image_snas }}
+=======
+{{ partial "text-and-image-snas" (dict "heading" "Get Started" "text" "You can start using SNAS without any BGP feed of your own! We provide an application that downloads publicly available bgp data which you can immediately visualize using SNAS UI." "buttonText" "Start Now" "buttonLink" "/gettingstarted") }}
+>>>>>>> Stashed changes
 
 {{ partial "2-up" .Site.Params.two_up }}
 

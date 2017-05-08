@@ -1,15 +1,15 @@
 ---
-title: "Getting Started"
+title: "Getting Started with Public BGP Data "
 date: 2017-02-03T15:04:10.000Z
 ---
 
-You can start using OpenBMP without any BGP feeds of your own. We provide you an application that downloads publicly available bgp data from RouteViews which you can immediately visualize using OpenBMP UI.
+You can start using SNAS without any BGP feeds of your own. We provide you an application that downloads publicly available bgp data from RouteViews which you can immediately visualize using SNAS UI.
 
 <!--more-->
 
 ## Step 1: Install AIO Container
 
-Go to OpenBMP github repository: **https://github.com/OpenBMP**
+Go to SNAS github repository: **https://github.com/OpenBMP**
 
 Click on docker directory: **https://github.com/OpenBMP/docker**
 
@@ -19,10 +19,10 @@ aio is the all-in-one container that includes all the main components of OpenBMP
 
 Follow directions in this directory.
 
-## Step 2: Install OpenBMP UI
+## Step 2: Install SNAS UI
 
 
-Go to OpenBMP github repository: **https://github.com/OpenBMP**
+Go to SNAS github repository: **https://github.com/OpenBMP**
 
 Click on docker directory: **https://github.com/OpenBMP/docker**
 
@@ -34,7 +34,7 @@ Follow directions in this directory.
 
 ## Step 3: Install MRT2BMP Application
 
-Go to OpenBMP github repository: **https://github.com/OpenBMP**
+Go to SNAS github repository: **https://github.com/OpenBMP**
 
 Click on openbmp-mrt2bmp directory: **https://github.com/OpenBMP/openbmp-mrt2bmp**
 
@@ -42,7 +42,7 @@ mrt2bmp application allows you to download BGP data from RouteViews and send it 
 
 ### Happy Browsing!!!
 
-Login to OpenBMP UI and start browsing!
+Login to SNAS UI and start browsing!
 
 
 
