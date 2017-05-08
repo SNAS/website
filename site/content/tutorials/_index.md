@@ -1,4 +1,4 @@
 ---
 title: Tutorials
-image: IMG_4337.jpg
+image: background_image_01-01.png
 ---
