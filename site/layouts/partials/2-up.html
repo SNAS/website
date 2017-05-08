@@ -1,42 +1,38 @@
 <div class="bg-off-white pv4">
   <div class="ph3 mw7 center">
+
     <h2 class="f2 b lh-title mb2">{{.heading}}</h2>
     <p class="mb4 mw9">{{.description}}</p>
-    <!--<p class="w-60-l mb0">{{.description}}</p>-->
 
     <div class="flex-ns mhn2-ns mb3">
-      <div class="ph2-ns w-100-ns">
-          <div class="ph2-ns center w-30-ns">
-            <img src="{{.svg1}}" alt="" class="mb4" style="width: 240px">
-          </div>
-          <p>{{.text1}}</p>
-      </div>
 
-      <div class="ph2-ns w-100-ns">
-          <div class="ph2-ns center w-30-ns">
-            <img src="{{.svg2}}" alt="" class="mb4" style="width: 240px">
-          </div>
-          <p>{{.text2}}</p>
-      </div>
-    </div>
+      <div class="ph2 w-100-ns pb4 mb4 relative">
+        <div class="ph2 center w-40 tc mb-4">
+          <img src="{{.svg1}}" alt="" class="mb4" style="width: 240px">
+        </div>
+        <p>{{.text1}}</p>
 
-    <div class="flex-ns mhn2-ns mb3">
-      <div class="ph2-ns w-50-ns">
         {{ if .button_text1 }}
-        <div class="tc">
+        <div class="tc w-100 bottom-0 absolute">
           <a href="{{.button_link1}}" class="btn raise">{{.button_text1}}</a>
         </div>
         {{ end }}
       </div>
 
-      <div class="ph2-ns w-40-ns">
+      <div class="ph2 w-100-ns pb4 mb4 relative">
+        <div class="ph2 center w-40 tc">
+          <img src="{{.svg2}}" alt="" class="mb4" style="width: 240px">
+        </div>
+        <p>{{.text2}}</p>
+
         {{ if .button_text2 }}
-        <div class="tc">
+        <div class="tc w-100 bottom-0 absolute">
           <a href="{{.button_link2}}" class="btn raise">{{.button_text2}}</a>
         </div>
         {{ end }}
       </div>
 
+    </div>
 
   </div>
 </div>
