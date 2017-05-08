@@ -5,7 +5,7 @@ pluralizelisttitles = false
 
 
 [Params.jumbotron]
-    image_url = "/img/background_image_01-01.png"
+    image_url = "/img/background_image_01.png"
     title = "What would you do if you had..."
     subtitle = "Real-time IP routing data at your fingertips?"
 
