@@ -6,7 +6,7 @@
 	</a>
 
 	<!-- Primary Nav -->
-	<ul class="flex b grey-3">
+	<ul class="flex b grey-3 desktop-menu">
 
 		<li><a href="/docs" class="f3 pa3 no-underline db">Docs</a></li>
 
@@ -15,7 +15,54 @@
 		<li><a href="/demo" class="f3 pa3 no-underline db">Demo</a></li>
 
 		<li><a href="/aboutus" class="f3 pa3 no-underline db">About Us</a></li>
-
 	</ul>
+
+	<div id="mySidenav" class="sidenav">
+		<a href="/docs" class="f3 pa3 no-underline db">Docs</a>
+		<a href="/tutorials" class="f3 pa3 no-underline db">Tutorials</a>
+		<a href="/demo" class="f3 pa3 no-underline db">Demo</a>
+		<a href="/aboutus" class="f3 pa3 no-underline db">About&nbsp;Us</a>
+	</div>
+
+	<ul class="flex b grey-3 mobile-menu">
+		<div class="hamburger hamburger--elastic" tabindex="0"
+			 aria-label="Menu" role="button" aria-controls="navigation">
+			<div class="hamburger-box" onclick="toggleNav()">
+				<div class="hamburger-inner"></div>
+			</div>
+		</div>
+	</ul>
+
+	<script>
+		function toggleNav() {
+			if (document.getElementById("mySidenav").classList.contains('sidenav-opened')) {
+			    document.getElementById("mySidenav").classList.remove('sidenav-opened');
+		    } else {
+		    	document.getElementById("mySidenav").classList.add('sidenav-opened');
+		    }
+		}
+
+		/**
+		* forEach implementation for Objects/NodeLists/Arrays, automatic type loops and context options
+		*
+		* @private
+		* @author Todd Motto
+		* @link https://github.com/toddmotto/foreach
+		* @param {Array|Object|NodeList} collection - Collection of items to iterate, could be an Array, Object or NodeList
+		* @callback requestCallback      callback   - Callback function for each iteration.
+		* @param {Array|Object|NodeList} scope=null - Object/NodeList/Array that forEach is iterating over, to use as the this value when executing callback.
+		* @returns {}
+		*/
+		var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
+			var hamburgers = document.querySelectorAll(".hamburger");
+			if (hamburgers.length > 0) {
+				forEach(hamburgers, function(hamburger) {
+					hamburger.addEventListener("click", function() {
+					this.classList.toggle("is-active");
+				}, false);
+			});
+		}
+	</script>
+
 
 </nav>
