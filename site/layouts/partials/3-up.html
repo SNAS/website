@@ -2,7 +2,6 @@
     <div class="ph3 mw7 center">
         <h2 class="f2 b lh-title mb2">{{.heading}}</h2>
         <p class="mb4 mw9">{{.description}}</p>
-        <!--<p class="w-60-l mb0">{{.description}}</p>-->
 
         <div class="flex-ns mhn2-ns">
             <div class="ph2-ns w-100-ns">
@@ -30,34 +29,34 @@
        <div class="flex-ns mhn2-ns mb3">
 
         <div class="ph2-ns w-100-ns">
-            {{ if .buttonText1 }}
+            {{ if .button_text1 }}
             <div class="tc">
-                <a href="{{.buttonLink1}}" class="btn raise">{{.buttonText1}}</a>
+                <a href="{{.button_link1}}" class="btn raise">{{.button_text1}}</a>
             </div>
             {{ end }}
         </div>
 
         <div class="ph2-ns w-100-ns">
-            {{ if .buttonText2 }}
+            {{ if .button_text2 }}
             <div class="tc">
-                <a href="{{.buttonLink2}}" class="btn raise">{{.buttonText2}}</a>
+                <a href="{{.button_link2}}" class="btn raise">{{.button_text2}}</a>
             </div>
             {{ end }}
         </div>
 
         <div class="ph2-ns w-100-ns">
-            {{ if .buttonText3 }}
+            {{ if .button_text3 }}
             <div class="tc">
-                <a href="{{.buttonLink3}}" class="btn raise">{{.buttonText3}}</a>
+                <a href="{{.button_link3}}" class="btn raise">{{.button_text3}}</a>
             </div>
             {{ end }}
         </div>
 
        </div>
 
-    {{ if .buttonText4 }}
+    {{ if .button_text4 }}
     <div class="tc">
-        <a href="{{.buttonLink4}}" class="btn raise">{{.buttonText4}}</a>
+        <a href="{{.button_link4}}" class="btn raise">{{.button_text4}}</a>
     </div>
     {{ end }}
 
