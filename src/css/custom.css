@@ -18,12 +18,12 @@ footer {
 }
 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 70rem) {
 
     .mobile-menu {display:none;}
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 70rem) {
     .desktop-menu {display:none;}
 }
 
