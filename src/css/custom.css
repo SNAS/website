@@ -4,6 +4,10 @@ html {
     background-color: white;
 }
 
+h2 {
+    font-size: 1.8rem;
+}
+
 body {
     margin: 0 0 10rem; /* bottom = footer height */
     min-height: 100%;
