@@ -1,6 +1,6 @@
 ---
 title: "Architecture"
-type: "develop"
+type: "docs"
 date: 2017-02-03T15:04:10.000Z
 ---
 

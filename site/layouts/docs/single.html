@@ -1,0 +1,13 @@
+{{ partial "head" . }}
+{{ partial "nav" . }}
+
+<div class="mw7 center ph3 pv4">
+    <h1 class="f2 lh-title b mb3">{{.Title}}</h1>
+    <div class="flex justify-between grey-3">
+    </div>
+    <div class="wide-p mw7">
+        {{ .Content }}
+    </div>
+</div>
+
+{{ partial "footer" . }}

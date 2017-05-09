@@ -56,3 +56,7 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+.wide-p p{
+    max-width: 100%;
+}
