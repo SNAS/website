@@ -1,11 +1,13 @@
 ---
-title: "Kafka API"
-date: 2017-01-04T15:04:10.000Z
+title: "Use Case 1 Title"
+type: "docs"
+date: 2017-02-04T15:04:10.000Z
 ---
 
 You can start using OpenBMP without any BGP feeds of your own. We provide you an application that downloads publicly available bgp data from RouteViews which you can immediately visualize using OpenBMP UI.
 
 <!--more-->
+
 
 ## Step 1: Install AIO Container
 
@@ -40,7 +42,7 @@ Click on openbmp-mrt2bmp directory: **https://github.com/OpenBMP/openbmp-mrt2bmp
 
 mrt2bmp application allows you to download BGP data from RouteViews and send it to openbmp collector. The application downloads data from RouteViews every 15 minutes (the frequency in which RouteViews make the data available for download). 
 
-### Happy Browsing!!!
+## Happy Browsing!
 
 Login to OpenBMP UI and start browsing!
 

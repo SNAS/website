@@ -1,8 +1,33 @@
-@media only screen and (min-width: 768px) {
+html {
+    position: relative;
+    min-height: 100%;
+    background-color: white;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+body {
+    margin: 0 0 10rem; /* bottom = footer height */
+    min-height: 100%;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10rem;
+    width: 100%;
+}
+
+
+@media only screen and (min-width: 70rem) {
+
     .mobile-menu {display:none;}
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 70rem) {
     .desktop-menu {display:none;}
 }
 
@@ -55,4 +80,8 @@
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+
+.wide-p p{
+    max-width: 100%;
 }

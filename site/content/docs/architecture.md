@@ -1,7 +1,7 @@
 ---
 title: "SNAS Architecture"
-type: "develop"
-date: 2017-05-07T15:04:10.000Z
+type: "docs"
+date: 2017-02-03T15:04:10.000Z
 ---
 
 The main architectural components of the SNAS framework are:  

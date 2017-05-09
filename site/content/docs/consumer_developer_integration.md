@@ -1,6 +1,6 @@
 ---
 title: "Consumer Developer Integration"
-type: "develop"
+type: "docs"
 date: 2017-01-04T15:04:10.000Z
 ---
 
@@ -15,7 +15,7 @@ Alternatively, the developer can interact with the MySQL database via the openbm
 Reasons for using Apache Kafka
 ------------------------------
 
-### Problem without Message Bus
+## Problem without Message Bus
 
 
 * Direct MySQL integration into the collector is too specific for other products to integrate with
@@ -24,7 +24,7 @@ Reasons for using Apache Kafka
 * Supporting multiple consuming destinations would require the collector to be aware of the multiple destinations and tracking them
 * Supporting multiple destination formats, such as MySQL, MongoDB, Cassandra, flat files/logging, etc. would be code intrusive to the collector, requiring it to be rebuilt and restarted
 
-### Base Requirements for a Message Bus
+## Base Requirements for a Message Bus
 * UTF-8/binary
 * Messages per second >= 20K per broker node
 * Message sizes <= 256K bytes
@@ -36,7 +36,7 @@ Reasons for using Apache Kafka
 * Must support consumers of different consumption rates. Not all consumers are equal in terms of their ability to consume messages at the rate they are being produced
 
 
-### Why Not use AMQP?
+## Why Not use AMQP?
 
 * RabbitMQ doesn't do a good job of supporting AMQP version 1.0, which includes lack of client API's
 * Qpid does support AMQP 1.0 but the API's are a bit clumsy.  Qpid messaging API supports AMQP 0.10 and 0.9.1 but not 1.0.   Proton supports 0.10 and 1.0 but not 0.9.1
@@ -46,7 +46,7 @@ Reasons for using Apache Kafka
 * AMQP 1.0 is standard but Pivotal/RabbitMQ is causing confusion by keeping 0.9.1 alive, which is not compatible with 1.0
 * RabbitMQ and QPid do not support consumers at different rates well
 
-### Key Reasons to use Apache Kafka
+## Key Reasons to use Apache Kafka
 
 * Open source and current
 * Has multiple client language API’s (librdkafka works well for C/C++)

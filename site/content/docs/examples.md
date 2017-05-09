@@ -1,5 +1,6 @@
 ---
 title: "Examples"
+type: "docs"
 date: 2017-01-04T15:04:10.000Z
 ---
 
@@ -17,51 +18,51 @@ UI Screenshots
  
 ## Top 20 Prefixes updated and withdrawn
 Time period customizable
-![](images/top20.png "Top 20 prefixes updated/withdrawn")
+![](/img/docs/top20.png "Top 20 prefixes updated/withdrawn")
 
 
 ## Peer Info
 Similar to ```show bgp neighbor```, which includes the TCP session and capabilities 
-![](images/peer_info.png "Peer Info")
+![](/img/docs/peer_info.png "Peer Info")
 
 
 ## Security Analysis
 Report received origin of prefixes to RPKI and IRR.  IRR data is downloaded once a day.  RPKI is continually updated every few minutes. 
-![](images/security_report.png "Security Analysis")
+![](/img/docs/security_report.png "Security Analysis")
 
 
-![](images/rpki_drill_down.png "RPKI drill down")
+![](/img/docs/rpki_drill_down.png "RPKI drill down")
 
 ## BGP-LS
 BGP-LS provides the link-state topology for either IS-IS and/or OSPF.  SPF's are run per router to build the topology and routing tables.  Run path traces, including the ability to run them with constraints, such as what if this router link didn't exist or what if one was added...
 
-![](images/linkstate_topo_geo.png "link-state topo with geo")
-![](images/linkstate_map_traces.png "link-state map path trace")
-![](images/linkstate_SPF_and_traces.png "link-state spf and path trace")
+![](/img/docs/linkstate_topo_geo.png "link-state topo with geo")
+![](/img/docs/linkstate_map_traces.png "link-state map path trace")
+![](/img/docs/linkstate_SPF_and_traces.png "link-state spf and path trace")
 
 
 ## AS Analysis
 
-![](images/as_view.png "AS View")
-![](images/as_view_up_down.png "AS Upstream/downstream")
-![](images/as_by_prefix_summary.png "AS prefix summary")
+![](/img/docs/as_view.png "AS View")
+![](/img/docs/as_view_up_down.png "AS Upstream/downstream")
+![](/img/docs/as_by_prefix_summary.png "AS prefix summary")
 
 ## RIB
 
 Routing table is maintained per BGP peer (pre and post policy)
-![](images/routing_table.png "Routing table")
+![](/img/docs/routing_table.png "Routing table")
 
 Per peer Pre and Post policy metrics are tracked over time
-![](images/Pre_post_stats.png "Peer pre/post policy stats")
+![](/img/docs/Pre_post_stats.png "Peer pre/post policy stats")
 
 View the history of any prefix. 
-![](images/prefix_history.png "Prefix history")
+![](/img/docs/prefix_history.png "Prefix history")
 
 Per peer updates over time
-![](images/updates_overtime.png "Updates")
+![](/img/docs/updates_overtime.png "Updates")
 
 Per peer withdrawals over time
-![](images/withdraws_overtime.png "Withdraws")
+![](/img/docs/withdraws_overtime.png "Withdraws")
 
 
 - - -
@@ -71,7 +72,7 @@ MySQL Client
 
 **Routes Example** 
 
-![](images/routes-shell.png "Routes image")
+![](/img/docs/routes-shell.png "Routes image")
 
 ```
 MySQL [openBMP]> select RouterName,PeerName,Prefix,PrefixLen,Origin,Origin_AS,MED,LocalPref,NH,AS_Path from routes where prefix like '24.50.20%';
@@ -86,7 +87,7 @@ MySQL [openBMP]> select RouterName,PeerName,Prefix,PrefixLen,Origin,Origin_AS,ME
 
 **Routes History Example**
 
-![](images/routes-history-shell.png "Routes history image")
+![](/img/docs/routes-history-shell.png "Routes history image")
 
 ```
 MySQL [openBMP]> select RouterName,PeerName,Prefix,PrefixLen,Origin,Origin_AS,MED,LocalPref,NH,AS_Path,LastModified  from routes_history where prefix = '24.50.208.0' order by LastModified Desc;
