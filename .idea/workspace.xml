@@ -10,8 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbe14ddc-638f-423b-9948-4994683bbccd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/config.toml" afterPath="$PROJECT_DIR$/site/config.toml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/layouts/analyze/single.html" afterPath="$PROJECT_DIR$/site/layouts/analyze/single.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/layouts/message_bus_integration/single.html" afterPath="$PROJECT_DIR$/site/layouts/message_bus_integration/single.html" />
     </list>
     <ignored path="openbmp-www.iws" />
@@ -77,8 +75,8 @@
       <file leaf-file-name="single.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/site/layouts/message_bus_integration/single.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+            <state relative-caret-position="435">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="e#841#861#0" expanded="true" />
                 <element signature="e#1507#1527#0" expanded="true" />
@@ -696,12 +694,12 @@
       <option name="presentableId" value="Default" />
       <updated>1494342046155</updated>
       <workItem from="1494342047623" duration="6716000" />
-      <workItem from="1494358097496" duration="4148000" />
+      <workItem from="1494358097496" duration="4319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10864000" />
+    <option name="totallyTimeSpent" value="11035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="23" width="1403" height="877" extended-state="6" />
@@ -891,8 +889,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/site/layouts/message_bus_integration/single.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        <state relative-caret-position="435">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
             <element signature="e#841#861#0" expanded="true" />
             <element signature="e#1507#1527#0" expanded="true" />
