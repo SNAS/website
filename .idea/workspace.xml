@@ -10,46 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbe14ddc-638f-423b-9948-4994683bbccd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Large/SNAS.io_BW_Large.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Large/SNAS.io_Gray_Large.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Large/SNAS.io_OrangeBlueLight_Large.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Large/SNAS.io_OrangeBlue_Large.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Large/SNAS.io_Orange_Large.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Large/SNAS.io_White_Large.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Medium/SNAS.io_BW_Medium.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Medium/SNAS.io_Gray_Medium.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Medium/SNAS.io_OrangeBlueLight_Medium.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Medium/SNAS.io_OrangeBlue_Medium.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Medium/SNAS.io_Orange_Medium.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Medium/SNAS.io_White_Medium.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Small/SNAS.io_BW_Small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Small/SNAS.io_Gray_Small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Small/SNAS.io_OrangeBlueLight_Small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Small/SNAS.io_OrangeBlue_Small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Small/SNAS.io_Orange_Small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_png/Small/SNAS.io_White_Small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Large/SNAS.io_BW_Large.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Large/SNAS.io_Gray_Large.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Large/SNAS.io_OrangeBlueLight_Large.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Large/SNAS.io_OrangeBlue_Large.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Large/SNAS.io_Orange_Large.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Large/SNAS.io_White_Large.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Medium/SNAS.io_BW_Medium.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Medium/SNAS.io_Gray_Medium.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Medium/SNAS.io_OrangeBlueLight_Medium.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Medium/SNAS.io_OrangeBlue_Medium.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Medium/SNAS.io_Orange_Medium.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Medium/SNAS.io_White_Medium.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Small/SNAS.io_BW_Small.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Small/SNAS.io_Gray_Small.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Small/SNAS.io_OrangeBlueLight_Small.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Small/SNAS.io_OrangeBlue_Small.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Small/SNAS.io_Orange_Small.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/static/img/SNAS.io/SNAS.io_svg/Small/SNAS.io_White_Small.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/site/static/img/logo.svg" afterPath="$PROJECT_DIR$/site/static/img/logo-snas.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/config.toml" afterPath="$PROJECT_DIR$/site/config.toml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/layouts/partials/nav.html" afterPath="$PROJECT_DIR$/site/layouts/partials/nav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/layouts/partials/footer.html" afterPath="$PROJECT_DIR$/site/layouts/partials/footer.html" />
     </list>
     <ignored path="openbmp-www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -126,12 +87,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nav.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nav.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/site/layouts/partials/nav.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="14" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+            <state relative-caret-position="585">
+              <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/site/layouts/partials/footer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="61" lean-forward="false" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="svg.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/site/layouts/partials/svg.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,26 +124,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="single.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site/layouts/rest_integration/single.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="single.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site/layouts/message_bus_integration/single.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -186,6 +149,7 @@
         <option value="$PROJECT_DIR$/site/layouts/message_bus_integration/single.html" />
         <option value="$PROJECT_DIR$/site/config.toml" />
         <option value="$PROJECT_DIR$/site/layouts/partials/nav.html" />
+        <option value="$PROJECT_DIR$/site/layouts/partials/footer.html" />
       </list>
     </option>
   </component>
@@ -921,12 +885,12 @@
       <option name="presentableId" value="Default" />
       <updated>1494342046155</updated>
       <workItem from="1494342047623" duration="6716000" />
-      <workItem from="1494420038225" duration="2413000" />
+      <workItem from="1494420038225" duration="3320000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9129000" />
+    <option name="totallyTimeSpent" value="10036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1075" y="64" width="1440" height="824" extended-state="0" />
@@ -1191,8 +1155,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/site/layouts/partials/nav.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="14" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+        <state relative-caret-position="585">
+          <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/layouts/partials/svg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/layouts/partials/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="61" lean-forward="false" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
           <folding />
         </state>
       </provider>
