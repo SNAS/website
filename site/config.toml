@@ -11,7 +11,7 @@ pluralizelisttitles = false
 
 
 [Params.short_text]
-    heading = "SNAS"
+    heading = "SNAS.io"
     text = "Streaming Network Analytics System (project SNAS.io) is a framework to collect, track and access tens of millions of routing objects (routers, peers, prefixes) in real time."
 
 [Params.three_up]
