@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "rm -rf dist/ && npm run build"
   publish = "dist"
 
 [context.deploy-preview]
