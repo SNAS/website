@@ -2,8 +2,28 @@
 
 {{ partial "nav" . }}
 
-<div class="ph3 bg-off-white">
-	<p>Coming Soon</p>
+<div class="mw7 center ph3 pv4">
+	<h1 class="f2 lh-title b mb3">Integrate using REST APIs</h1>
+	<div class="flex justify-between grey-3">
+	</div>
+	<div class="wide-p mw7">
+		<p>Network data published by the snas.io collector is stored in a MySQL database and developers can directly query the DB.
+			See example MySQL queries <a href="/docs/examples">here</a>.</p>
+
+		<p><br>Alternatively, the DB supports REST APIs that developers can use to query the DB. A full list of the
+		REST APIs supported can be found <a href="https://github.com/OpenBMP/db_rest">here</a>.</p>
+
+		<p>All queries have the following JSON syntax/output:</p>
+		<img src="/img/json_format_for_website.png" alt="" class="left db mb1" style="width: 740px">
+
+		<p>Below is an example DB response to a GET for count of BGP peers by type (GET /db_rest/v1/peer/type/count)-</p>
+
+		<img src="/img/json_output_for_website.png" alt="" class="left db mb1" style="width: 740px">
+
+		The REST interface provide multiple APIs to get filtered data about BGP peers and prefixes in widely
+		adopted JSON format - a flexible and extensible alternative to MySQL queries or using Kafka data from the message bus directly!
+
+	</div>
 </div>
 
 {{ partial "footer" . }}
