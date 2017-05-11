@@ -1,7 +1,7 @@
 {
-  "name": "victor-hugo",
+  "name": "snas.io",
   "version": "1.0.0",
-  "description": "Victor Hugo is a Hugo boilerplate for creating truly epic websites!",
+  "description": "SNAS.io",
   "main": "index.js",
   "scripts": {
     "hugo": "gulp hugo",
