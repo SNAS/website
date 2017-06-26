@@ -1,5 +1,5 @@
 ---
-title: "SNAS Charter"
+title: "SNAS.io  Charter"
 type: "charter"
 date: 2017-04-27T15:04:10.0004
 ---
