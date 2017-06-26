@@ -1,8 +1,9 @@
 ---
 title: "SNAS.io  Charter"
 type: "charter"
-date: 2017-04-27T15:04:10.0004
+date: 2017-04-27T15:04:10.0004Z
 ---
+
 
 # <p style="text-align: center;"> THE LINUX FOUNDATION </p>
 
