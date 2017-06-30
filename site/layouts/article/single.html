@@ -1,16 +1,20 @@
 {{ partial "head" . }}
 {{ partial "nav" . }}
-<!--{{ partial "jumbotron" (dict "imageUrl" "/img/IMG_2531.jpg" "title" "Develop") }}-->
 
-<div class="mw6 center ph3 pv4">
-	<h1 class="f2 lh-title b mb3">{{.Title}}</h1>
+{{ partial "header-short" . }}
+
+<!-- Header for the article -->
+<div class="mw7 center ph3 pv4">
 	<div class="flex justify-between grey-3">
 		<p>{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
 		<p>Read in {{ .ReadingTime }} minutes</p>
 	</div>
-	<div class="cms mw6">
-		{{ .Content }}
-	</div>
 </div>
+
+<!-- Article content -->
+<div class="cms mw7 ph5 pb4 center">
+    {{ .Content }}
+</div>
+
 
 {{ partial "footer" . }}

@@ -57,7 +57,7 @@ footer {
     transition: 0.3s
 }
 
-/* When you mouse over the navigation links, change their color */
+/* When you mouse over the navigation links, ange their colochr */
 .sidenav a:hover, .offcanvas a:focus{
     color: #f1f1f1;
 }
@@ -84,4 +84,87 @@ footer {
 
 .wide-p p{
     max-width: 100%;
+}
+
+p{
+    max-width: 90%;
+    padding: 8px 8px 8px 8px;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 8px solid #ccc;
+    font-size: 0.8em;
+    color: #424040;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+
+a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+}
+
+a:hover {
+     /*transform: scale(0.9);*/
+     font-weight: bold;
+     color: #424040;
+     opacity: 90;
+}
+
+
+a:hover.nohover {
+    font-weight: inherit;
+    color: inherit;
+    opacity: 100;
+}
+
+
+ul {
+    list-style: square;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    margin-left: 1.5em;
+    font-size: 0.9em;
+    color: #424040;
+}
+
+ol {
+    list-style: square;
+}
+
+
+table {
+    border: solid 1px #cccccc;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 14px Arial, sans-serif;
+}
+
+thead th {
+    background-color: #cccccc;
+    border: solid 1px #cccccc;;
+    color: #2b2523;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    /*text-shadow: 1px 1px 1px #ccc;*/
+}
+
+tbody td {
+    border: solid 1px #cccccc;;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+
+    /* no boarder on left and right */
+    border-left: none;
+    border-right: none;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
 }

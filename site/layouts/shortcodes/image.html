@@ -1,0 +1,6 @@
+<!-- Usage in markdown/content : { { % image img="/img/demo-shots/watcher-demo.png" % } } -->
+
+{{ if .Get "img" }}
+    <img src="{{ .Get "img"}}"/>
+{{ end }}
+
