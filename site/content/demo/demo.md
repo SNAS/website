@@ -6,7 +6,7 @@ image: background_image_01.png
 It is integrated within the SNAS pipeline of received data to perform various analytics. Each analysis is
 grouped into an event **rule** that gets logged or transmitted to a remote alerting system.
 
-Watcher is implements a push model to deliver events as they are generated.  
+Watcher implements a push model to deliver events as they are generated.  
 <!--more-->
 
 [Take me to the demo!](http://demo.snas.io:8001/)
