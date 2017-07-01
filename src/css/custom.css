@@ -132,6 +132,16 @@ ul {
     color: #424040;
 }
 
+ul.no-list-style {
+    list-style: none;
+    font-size: inherit;
+    color: inherit;
+    margin-bottom: inherit;
+    margin-top: inherit;
+    margin-left: inherit;
+
+}
+
 ol {
     list-style: square;
 }
