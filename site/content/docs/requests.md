@@ -1,6 +1,5 @@
 ---
 title: "Requests and Issues"
-type: "docs"
 date: 2017-03-14T15:04:10.000Z
 ---
 

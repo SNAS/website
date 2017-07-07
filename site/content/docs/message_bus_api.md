@@ -1,6 +1,5 @@
 ---
 title: "Message Bus API Specification"
-type: "docs"
 date: 2017-05-07T15:04:10.000Z
 ---
 
