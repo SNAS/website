@@ -1,0 +1,159 @@
+/* Markdown default styles */
+
+/*.md-default p {*/
+    /*max-width: 90%;*/
+    /*padding: 8px 8px 8px 8px;*/
+/*}*/
+
+
+.md-default blockquote  {
+    background: #f9f9f9;
+    border-left: 8px solid #ccc;
+    font-size: 0.8em;
+    color: #424040;
+    margin: 1em 10px;
+    padding: 0em 10px 1em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+/* ---------------------------------
+    Headings
+ */
+.md-default h3, .md-default h4 {
+    padding-top: 2em;
+}
+
+.md-default h5 {
+    margin: 1em 0.5em 1em 0.5em;
+    color: #424040;
+    font-size: 0.9em;
+}
+
+/* ---------------------------------
+    Ordered and Unordered Lists
+ */
+.md-default ul, .md-default ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 2em;
+    padding-top: 1em;
+    display: table;
+}
+
+.md-default li {
+    padding-left: 1em;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: table-row;
+    min-height: 1.5em;
+}
+
+/* NOTE: markdown generation is putting a P block around the first bullet or when the bullet contents contains headers.
+   Below adjusts the formatting for this.
+ */
+.md-default li>p {
+    padding: 0;
+    margin: 0;
+    /*display: inline-block;*/
+}
+
+.md-default li:before {
+    padding-right: 0.5em;
+    color:#f40;
+    display: table-cell;
+}
+
+/* Change the unordered bullet to a star */
+.md-default ul>li:before {
+    content:"✱";
+}
+
+.md-default ol ol,.md-default ul ul {
+    padding: 0;
+    padding-left: 1.5em;
+    font-size: 0.8em;
+}
+
+.md-default ol {
+    counter-reset: section;
+}
+
+.md-default ol>li:before {
+    font-weight: bold;
+    counter-increment: section;
+    /*content: counters(section, ".") " ";*/
+    /*content: counter(section, lower-alpha);*/
+    content: counters(section, ".", lower-alpha) ". ";
+}
+
+/* -----------------------------
+    Tables
+ */
+.md-default table {
+    border: solid 1px #cccccc;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 14px Arial, sans-serif;
+    margin-bottom: 1em;
+}
+
+.md-default thead th {
+    background-color: #cccccc;
+    border: solid 1px #cccccc;;
+    color: #2b2523;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    /*text-shadow: 1px 1px 1px #ccc;*/
+}
+
+.md-default tbody td {
+    border: solid 1px #cccccc;;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+
+    /* no boarder on left and right */
+    border-left: none;
+    border-right: none;
+}
+
+.md-default tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* --------------------------------
+    Links
+ */
+.md-default a {
+    color:#f40;
+    -webkit-transition:all .15s ease;
+    transition:all .15s ease
+}
+
+.md-default a:hover {
+    background-color:#fed5c6;
+    color:#2b2523
+}
+
+/* -----------------------------------------------------------------------------------------  */
+/*    ONLY for reference --- do not use the CMS class */
+/*.cms h1{font-size:40.5px;font-size:2.25rem}*/
+/*.cms h2{font-size:27px;font-size:1.5rem}*/
+/*.cms h3{font-size:22.5px;font-size:1.25rem}*/
+/*.cms h4{font-size:18px;font-size:1rem}*/
+/*.cms h5{font-size:15.75px;font-size:.875rem}*/
+/*.cms img{display:block;margin-bottom:18px;margin-bottom:1rem;margin-left:auto;margin-right:auto;max-width:100%}*/
+/*.cms a{color:#f40;-webkit-transition:all .15s ease;transition:all .15s ease}*/
+/*.cms a:hover{background-color:#fed5c6;color:#2b2523}*/
+/*.cms li, .cms ol,.cms ul{position:relative}*/
+/*.cms ol,.cms ul{margin-bottom:18px;margin-bottom:1rem}*/
+/*.cms ol ol,.cms ul ul{padding-left:9px;padding-left:.5rem}*/
+/*.cms ul{margin-left:23.94px;margin-left:1.33rem}*/
+/*.cms ul>li:before{content:"✱";left:-23.94px;left:-1.33rem;position:absolute;color:#f40}*/
+/*.cms ol{list-style:none;margin-left:18px;margin-left:1rem;counter-reset:a 0}*/
+/*.cms ol>li:before{font-weight:800;left:-18px;left:-1rem;position:absolute;height:100%;content:counter(a);counter-increment:a;color:#f40}*/
+/*.cms blockquote{background-color:#f5f3f2;display:block;border-radius:.25rem;padding:18px;padding:1rem;color:#f40;font-weight:700;font-size:22.5px;font-size:1.25rem;margin-bottom:18px;margin-bottom:1rem}*/
+/*.cms blockquote p{margin:0}*/
+
