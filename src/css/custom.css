@@ -21,13 +21,11 @@ footer {
     width: 100%;
 }
 
-
-@media only screen and (min-width: 70rem) {
-
+@media only screen and (min-width:991px) {
     .mobile-menu {display:none;}
 }
 
-@media only screen and (max-width: 70rem) {
+@media only screen and (max-width:990px) {
     .desktop-menu {display:none;}
 }
 
