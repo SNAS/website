@@ -27,6 +27,12 @@ menu:
       icon: fa-cloud-download
 
       items:
+        - href: '#testing'
+          label: Testing
+          parent: '#getting_started'
+          items:
+            - href: install
+              label: Install
         - href: requirements
           label: Requirements
           parent: '#getting_started'

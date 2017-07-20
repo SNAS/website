@@ -107,6 +107,9 @@ p {
     padding: 8px 8px 8px 8px;
 }
 
+#sidebar .list-group {
+    border: none;
+}
 
 #sidebar .list-group-item {
     font-size: 0.8em;
@@ -124,7 +127,7 @@ p {
 }
 
 #sidebar .list-group .active {
-    /*background-color: #f1f1f1;*/
+    background-color: #f1f1f1;
     color: #ff4400;
 }
 
@@ -136,8 +139,6 @@ p {
 /* highlight active menu */
 #sidebar .list-group-item:not(.collapsed) {
     /*background-color: #222;*/
-    /*background-color: #f1f1f1;*/
-    /*border-color: #e3e3e3;*/
 }
 
 /* closed state */
@@ -151,8 +152,7 @@ p {
 
 /* open state - selected item */
 #sidebar .list-group .list-group-item[aria-expanded="true"] {
-    /*background-color: #222;*/
-    /*background-color: #f29916;*/
+    background-color: #4b5257;
     color: #f29916;
     font-weight: bold;
 }
@@ -167,16 +167,19 @@ p {
 /* level 1*/
 #sidebar .list-group .collapse .list-group-item  {
     padding-left: 20px;
+    background-color: #e6e6e6;
 }
 
 /* level 2*/
 #sidebar .list-group .collapse > .collapse .list-group-item {
     padding-left: 30px;
+    background-color: #d0d0d0;
 }
 
 /* level 3*/
 #sidebar .list-group .collapse > .collapse > .collapse .list-group-item {
     padding-left: 40px;
+    background-color: #cccccc;
 }
 
 @media (max-width:48em) {
