@@ -1,7 +1,6 @@
 ---
 title: Documentation
 image: background_image_01.png
-test: testing
 
 #
 # .Params.menu can be accessed in the template/layouts
