@@ -27,12 +27,6 @@ menu:
       icon: fa-cloud-download
 
       items:
-        - href: '#testing'
-          label: Testing
-          parent: '#getting_started'
-          items:
-            - href: install
-              label: Install
         - href: requirements
           label: Requirements
           parent: '#getting_started'
@@ -68,7 +62,7 @@ menu:
       label: Developer Integration
       icon: fa-code
       items:
-        - href: consumer_develoepr_integration
+        - href: consumer_developer_integration
           label: Consumer Integration
         - href: logstash
           label: Using Logstash
