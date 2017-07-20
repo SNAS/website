@@ -1,0 +1,101 @@
+{{ partial "head" . }}
+{{ partial "nav" . }}
+
+{{ partial "header-short" . }}
+
+
+<div class="container-fluid">
+    <div class="row pt-4">
+        <!--<div class="col-md-3" id="sidebar">-->
+            <!--<div class="list-group card">-->
+                <!--<a href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><span class="hidden-sm-down">Item 1</span> </a>-->
+                <!--<div class="collapse" id="menu1">-->
+                    <!--<a href="#menu1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Subitem 1 </a>-->
+                    <!--<div class="collapse" id="menu1sub1">-->
+                        <!--<a href="#" class="list-group-item" data-parent="#menu1sub1">Subitem 1 a</a>-->
+                        <!--<a href="#" class="list-group-item" data-parent="#menu1sub1">Subitem 2 b</a>-->
+                        <!--<a href="#menu1sub1sub1" class="list-group-item" data-toggle="collapse" aria-expanded="false">Subitem 3 c </a>-->
+                        <!--<div class="collapse" id="menu1sub1sub1">-->
+                            <!--<a href="#" class="list-group-item" data-parent="#menu1sub1sub1">Subitem 3 c.1</a>-->
+                            <!--<a href="#" class="list-group-item" data-parent="#menu1sub1sub1">Subitem 3 c.2</a>-->
+                        <!--</div>-->
+                        <!--<a href="#" class="list-group-item" data-parent="#menu1sub1">Subitem 4 d</a>-->
+                        <!--<a href="#menu1sub1sub2" class="list-group-item" data-toggle="collapse"  aria-expanded="false">Subitem 5 e </a>-->
+                        <!--<div class="collapse" id="menu1sub1sub2">-->
+                            <!--<a href="#" class="list-group-item" data-parent="#menu1sub1sub2">Subitem 5 e.1</a>-->
+                            <!--<a href="#" class="list-group-item" data-parent="#menu1sub1sub2">Subitem 5 e.2</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<a href="#" class="list-group-item" data-parent="#menu1">Subitem 2</a>-->
+                    <!--<a href="#" class="list-group-item" data-parent="#menu1">Subitem 3</a>-->
+                <!--</div>-->
+                <!--<a href="#" class="list-group-item collapsed" data-parent="#sidebar">-->
+                    <!--<i class="fa fa-film pr-2"></i> <span class="hidden-sm-down">Item 2</span></a>-->
+                <!--<a href="#menu3" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false">-->
+                    <!--<i class="fa fa-book pr-2"></i> <span class="hidden-sm-down">Item 3 </span></a>-->
+                <!--<div class="collapse" id="menu3">-->
+                    <!--<a href="#" class="list-group-item" data-parent="#menu3">3.1</a>-->
+                    <!--<a href="#menu3sub2" class="list-group-item" data-toggle="collapse" aria-expanded="false">3.2 </a>-->
+                    <!--<div class="collapse" id="menu3sub2">-->
+                        <!--<a href="#" class="list-group-item" data-parent="#menu3sub2">3.2 a</a>-->
+                        <!--<a href="#" class="list-group-item" data-parent="#menu3sub2">3.2 b</a>-->
+                        <!--<a href="#" class="list-group-item" data-parent="#menu3sub2">3.2 c</a>-->
+                    <!--</div>-->
+                    <!--<a href="#" class="list-group-item" data-parent="#menu3">3.3</a>-->
+                <!--</div>-->
+                <!--<a href="install" data-parent="#main" class="list-group-item collapsed" data-parent="#sidebar">-->
+                    <!--<i class="fa fa-code pr-2"></i> <span class="hidden-sm-down">Install</span></a>-->
+                <!--<a href="message_bus_api" class="list-group-item collapsed" data-parent="#sidebar">-->
+                    <!--<i class="fa fa-code pr-2"></i> <span class="hidden-sm-down">Message Bus API</span></a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<main class="col-md-9 col-xs-11 p-l-2 p-t-2">-->
+
+        <div class="col-md-3" id="sidebar">
+            {{ $parent := "#sidebar" }}
+
+            {{ partial "sidebar/begin" . }}
+
+            {{ range .Params.menu }}
+
+                {{ if .items }}
+                    {{ partial "sidebar/submenu-begin" . }}
+                    {{ range .items }}
+
+                        {{ if .items }}
+                            {{ partial "sidebar/submenu-begin" . }}
+
+                            {{ range .items }}
+                                {{ partial "sidebar/item" . }}
+                            {{ end }}
+
+                            {{ partial "sidebar/submenu-end" . }}
+
+                        {{ else }}
+                            {{ partial "sidebar/item" . }}
+
+                        {{ end }}
+                    {{ end }}
+
+                    {{ partial "sidebar/submenu-end" . }}
+
+                {{ else }}
+                    {{ partial "sidebar/item" . }}
+
+                {{ end }}
+
+            {{ end }}
+
+            {{ partial "sidebar/end" . }}
+        </div>
+
+        <main id="main" class="col-md-9 pull-right">
+            <div id="docsContent" class="md-default">
+                {{ .Content }}
+            </div>
+        </main>
+    </div>
+</div>
+
+{{ partial "footer" . }}

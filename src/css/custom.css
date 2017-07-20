@@ -2,6 +2,7 @@ html {
     position: relative;
     min-height: 100%;
     background-color: white;
+    font-size: 1em;
 }
 
 h2 {
@@ -27,6 +28,23 @@ footer {
 
 @media only screen and (max-width:990px) {
     .desktop-menu {display:none;}
+}
+
+a:focus,a:active {
+    box-shadow: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+    /*color: #ff4400;*/
+}
+
+.bg-primary {
+    background-color: #ff4400 !important;
+    color: #f1f1f1;
+    font-weight: bold;
 }
 
 .sidenav {
@@ -89,5 +107,118 @@ p {
     padding: 8px 8px 8px 8px;
 }
 
+#sidebar .list-group {
+    border: none;
+}
 
+#sidebar .list-group-item {
+    font-size: 0.8em;
+    border-radius: 0;
+    /*background-color: #333;*/
+    background-color: #fbfbfb;
+    /*color: #ccc;*/
+    color: #424040;
+    /*border-color: #2c2c2c;*/
+    border-color: #f1f1f1;
+    border-left: 0;
+    border-right: 0;
+    padding-left: 10px;
+    white-space: nowrap;
+}
+
+#sidebar .list-group .active {
+    background-color: #f1f1f1;
+    color: #ff4400;
+}
+
+#sidebar .list-group-item:hover {
+    color: #ff4400;
+    font-weight: bold;
+}
+
+/* highlight active menu */
+#sidebar .list-group-item:not(.collapsed) {
+    /*background-color: #222;*/
+}
+
+/* closed state */
+#sidebar .list-group .list-group-item[aria-expanded="false"]::after {
+    content: " \f0d7";
+    font-family: FontAwesome;
+    display: inline;
+    text-align: right;
+    padding-left: 5px;
+}
+
+/* open state - selected item */
+#sidebar .list-group .list-group-item[aria-expanded="true"] {
+    background-color: #4b5257;
+    color: #f29916;
+    font-weight: bold;
+}
+#sidebar .list-group .list-group-item[aria-expanded="true"]::after {
+    content: " \f0da";
+    font-family: FontAwesome;
+    display: inline;
+    text-align: right;
+    padding-left: 5px;
+}
+
+/* level 1*/
+#sidebar .list-group .collapse .list-group-item  {
+    padding-left: 20px;
+    background-color: #e6e6e6;
+}
+
+/* level 2*/
+#sidebar .list-group .collapse > .collapse .list-group-item {
+    padding-left: 30px;
+    background-color: #d0d0d0;
+}
+
+/* level 3*/
+#sidebar .list-group .collapse > .collapse > .collapse .list-group-item {
+    padding-left: 40px;
+    background-color: #cccccc;
+}
+
+@media (max-width:48em) {
+    /* overlay sub levels on small screens */
+    #sidebar .list-group .collapse.in, #sidebar .list-group .collapsing {
+        position: absolute;
+        z-index: 1;
+        width: 190px;
+    }
+    #sidebar .list-group > .list-group-item {
+        text-align: center;
+        padding: .75rem .5rem;
+    }
+    /* hide caret icons of top level when collapsed */
+    #sidebar .list-group > .list-group-item[aria-expanded="true"]::after,
+    #sidebar .list-group > .list-group-item[aria-expanded="false"]::after {
+        display:none;
+    }
+}
+
+/* change transition animation to width when entire sidebar is toggled */
+#sidebar.collapse {
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
+}
+
+#sidebar.collapsing {
+    opacity: 0.8;
+    width: 0;
+    -webkit-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    -webkit-transition-property: width;
+    -o-transition-property: width;
+    transition-property: width;
+
+}
 
