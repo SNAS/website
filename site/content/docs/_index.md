@@ -56,6 +56,9 @@ menu:
       items:
         - href: message_bus_api
           label: Message Bus API
+          
+        - href: db_schema
+          label: Database Schema
 
     - href: '#develop_int'
       label: Developer Integration
