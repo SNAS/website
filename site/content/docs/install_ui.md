@@ -78,7 +78,7 @@ tomcat, use  ```docker exec openbmp_ui tail -f /var/log/tomcat7/catalina.out```
 
 - - -
 
- #### System Start/Restart Config (ubuntu 14.04)
+ #### System Start/Restart Config (ubuntu 16.04)
  By default, the containers will not start automatically on system boot/startup.  You can use the below example to instruct the container to start automatically.
 
  You can read more at [Docker Host Integration](https://docs.docker.com/articles/host_integration/) on how to start containers automatically.

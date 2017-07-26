@@ -15,7 +15,7 @@ Collector container is the container for collecting BMP messages from BMP sender
 
 ### Recommended Current Linux Distributions
 
-  1. Ubuntu 14.04/Trusty
+  1. Ubuntu 16.04/Trusty
   1. CentOS 7/RHEL 7
 
 ### 1) Install docker
@@ -44,6 +44,8 @@ Run docker with ```-v /var/openbmp/config:/config``` to make use of the persiste
 
 #### config/openbmpd.conf
 You can provide a customized **openbmpd.conf**.  See [Config Example](https://github.com/OpenBMP/openbmp/blob/master/Server/openbmpd.conf)
+
+You can also add other hosts into a container’s /etc/hosts file by using one or more --add-host flags. 
 
 ### 4) Run docker container
 
