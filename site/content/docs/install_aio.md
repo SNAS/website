@@ -25,7 +25,7 @@ All-in-one (aio) includes everything needed to run the collector and store the d
 * **MariaDB 10.2** - MySQL server (listening port TCP 3306)
 * **Apache Kafka 0.10.1** - High performing message bus (listening ports are TCP 2181 and 9092)
 * **Tomcat/DB_REST** - Latest Rest interface into MySQL/MariaDB (listening port TCP 8001)
-* **Openbmp MySQL Consumer** - Latest Consumer that puts all data into MySQL
+* **SNAS MySQL Consumer** - Latest Consumer that puts all data into MySQL
 
 ### Recommended Current Linux Distributions
 
@@ -43,12 +43,15 @@ Docker host should be **Linux x86_64**.   Follow the [Docker Instructions](https
     docker pull openbmp/aio
 
 - - -
+
 ### 3) Create MySQL volumes
 MySQL/MariaDB uses a shared container (host) volume so that if you upgrade, restart, change the container it doesn't loose the DB contents.  **The DB will be initialized if the volume is empty.**  If the volume is not empty, the DB will be left unchanged.  
 
 When starting the container you will need to map a host file system to **/data/mysql** for the container.  You do this using the ```-v <host path>:/data/mysql```.  The below examples default to the host path of ```/var/openbmp/mysql```
 
-Note: To reinit the DB and apply the latest schema use docker run with the ```-e REINIT_DB=1```
+> #### NOTE
+>
+>To reinit the DB and apply the latest schema use docker run with the ```-e REINIT_DB=1``` option
 
 
 #### On host create mysql shared dir
@@ -61,6 +64,13 @@ Note: To reinit the DB and apply the latest schema use docker run with the ```-e
 
 ### 4) Run docker container
 
+#### Define API_FQDN
+Make sure to define ***API_FQDN*** as a hostname (or fqdn) and not by IP.  The hostname should
+resolve to the docker host (*host that runs docker containers*) IP address, which is normally
+eth0.
+
+If you do not plan to connect to the docker container via Kafka consumers, then you can use any 
+hostname, such as *openbmp.localdomain*
 > #### Memory for MySQL
 > Mysql requires a lot of memory in order to run well.   Currently there is not a  consistent way to check on the container memory limit. The ```-e MEM=size_in_GB`` should be specified in gigabytes (e.g. 16 for 16GB of RAM).   If you fail to supply this variable, the default will use **/proc/meminfo** .  In other words, the default is to assume no memory limit. 
 
@@ -76,13 +86,7 @@ MYSQL\_ROOT\_PASSWORD | password | MySQL root user password.  The default is **O
 MYSQL\_OPENBMP\_PASSWORD | password | MySQL openbmp user password.  The default is **openbmp**.  You can change the default openbmp user password using [standard mysql instructions](https://dev.mysql.com/doc/refman/5.6/en/set-password.html).  If you change the openbmp user password you MUST use this env.  
 
 
-# IMPORTANT - READ THIS BEFORE RUNNING THE CONTAINER
-Make sure to define ***API_FQDN*** as a hostname (or fqdn) and not by IP.  The hostname should
-resolve to the docker host (*host that runs docker containers*) IP address, which is normally
-eth0.
 
-If you do not plan to connect to the docker container via Kafka consumers, then you can use any 
-hostname, such as *openbmp.localdomain*
 
 #### Run Normally
 
@@ -106,7 +110,7 @@ Alternatively, it can be easier at times to navigate all the log files from with
     
     docker exec -it openbmp_aio bash
 
-#### System Start/Restart Config (ubuntu 14.04)
+#### System Start/Restart Config (ubuntu 16.04)
 By default, the containers will not start automatically on system boot/startup.  You can use the below example to instruct the openbmp/aio container to start automatically. 
 
 You can read more at [Docker Host Integration](https://docs.docker.com/articles/host_integration/) on how to start containers automatically. 

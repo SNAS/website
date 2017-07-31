@@ -61,7 +61,7 @@
 
 // Add "active" class to list-item-group when clicked.  Remove class when not active
 
-// jQuery(document).ready(function() {
+jQuery(document).ready(function() {
     $('.list-group-item').click(function(e) {
         e.preventDefault(); // prevent the default action to open link
         // console.log(e);
@@ -88,6 +88,7 @@
         }
 
         $("#docsContent").load($(this).attr("href"));
+        $(window).scrollTop(0);
         //$("#docsContent").html('hello');
         // $("#docsContent").load('install');
 
@@ -95,4 +96,51 @@
         // Prevent browsers default behavior to follow the link when clicked
         return false;
     });
-// });
+
+  /*
+   * Handle links in "docsContent" so that relative links are opened in right pane and external are opened
+   *  in a new window.
+   *
+   *  NOTE: jQuery.load() is used to load the content in the #docsContent div.  In order to capture this event
+   *      $on('click', ...) function needs to be used so that added elements after initial document load
+   *      are handled.   See http://api.jquery.com/on/ "Delegated events" for more details.
+   *
+   *     Also see: https://stackoverflow.com/questions/14339309/jquery-click-event-handlers-dont-work-after-loading-html-page-with-load for details
+  */
+  // The below will handle click events for the <div id="docsContent"> <a> links
+  $("div#docsContent").on('click',"a", function(e) {
+    // $(document).on('click',"#docsContent a", function(e) {       // This is an alternate to the above.
+    console.log("docs link clicked: ", $(this).attr("href"));
+
+    var regex = /(^[a-zA-Z]+:\/\/)|(^\/)/i;
+    var match = regex.exec($(this).attr("href"));
+
+    if (match && match.length > 1) {
+
+      if (match[1]) {
+        // External link (e.g. http://blah)
+        window.open($(this).attr("href"));
+
+      } else if (match[2]) {
+        // Absolute link (e.g. /demo)
+        //window.open($(this).attr("href"));
+        return true;
+      }
+
+    } else {
+      // Relative link (e.g. getting_start)
+
+      // Default action for local tag refs (e.g. #tag)
+      if ($(this).attr("href").startsWith("#")) {
+        return true;
+
+      } else {
+        $("#docsContent").load($(this).attr("href"));
+        $(window).scrollTop(0);
+      }
+    }
+
+    // Return false to disable the default action
+    return false;
+  } );
+});
