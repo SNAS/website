@@ -75,17 +75,15 @@ menu:
       items:
 ---
 
-The main architectural components of the SNAS framework are:
-
-A high speed, low foot print collector, a high performance message bus, consumer applications, database, APIs and user applications
-
+SNAS streams data from the network using a high performance collector.
+    The collector produces the parsed (and raw) BMP data to Kafka message bus
+    using a customizable topic structure.
+    
 <!--more-->
 
 ## Flow
 
-SNAS streams data from the network using a high performance collector.
-    The collector produces the parsed (and raw) BMP data to Kafka message bus
-    using a customizable topic structure.
+
 
 ![](/img/arch1.svg)
 

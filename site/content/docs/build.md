@@ -1,13 +1,15 @@
 ---
 title: "Building from Source"
-date: 2017-01-04T15:04:10.000Z
+date: 2017-05-07T15:04:10.000Z
 ---
+
+## Building from Source
 
 Openbmp is built and installed using 'cmake' to build the makefiles. 
 
 <!--more-->
 
-See the various requirements and suggested system configurations at [Requirements](REQUIREMENTS.md)
+See the various requirements and suggested system configurations at [Requirements](requirements)
 
 All Platforms (Ubuntu, CentOS, etc.)
 ------------------------------------

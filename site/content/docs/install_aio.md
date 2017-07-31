@@ -8,17 +8,16 @@ SNAS All-In-One (AIO) Docker Install Steps
 
 <!--more-->
 
-AIO container includes all components except SNAS UI. 
+AIO container includes all SNAS components except UI. 
 
-See the various requirements and suggested system configurations at [Requirements](/docs/install).
-
+Before instaling AIO container,see various requirements and suggested system configurations at [Requirements](install).
 
 
 Install Using Docker
 --------------------
 
 ### docker hub: openbmp/aio
-All-in-one (aio) includes everything needed to run the collector and store the data in MySQL.   You can use this container to test/evaluate SNAS as well as run smaller deployments.  Production deployments normally would have distributed collectors and a redundant pair of MySQL/MariaDB servers. 
+ AIO container includes everything needed to run the collector and store the data in MySQL. You can use this container to test/evaluate SNAS as well as run smaller deployments.  AIO container will most likely not be sufficient for larger production deployments because of the need for distributed collectors and a redundant pair of MySQL/MariaDB servers.
 
 #### Container Includes
 * **Openbmpd** - Latest collector (listening port is TCP 5000)
@@ -32,27 +31,19 @@ All-in-one (aio) includes everything needed to run the collector and store the d
   1. Ubuntu 16.04/Trusty
   1. CentOS 7/RHEL 7
 
+### Installation Steps
 - - -
 ### 1) Install docker
 Docker host should be **Linux x86_64**.   Follow the [Docker Instructions](https://docs.docker.com/installation/) to install docker.  
-
 - - -
-
 ### 2) Download the docker image
 
     docker pull openbmp/aio
-
-- - -
-
+    
 ### 3) Create MySQL volumes
 MySQL/MariaDB uses a shared container (host) volume so that if you upgrade, restart, change the container it doesn't loose the DB contents.  **The DB will be initialized if the volume is empty.**  If the volume is not empty, the DB will be left unchanged.  
 
 When starting the container you will need to map a host file system to **/data/mysql** for the container.  You do this using the ```-v <host path>:/data/mysql```.  The below examples default to the host path of ```/var/openbmp/mysql```
-
-> #### NOTE
->
->To reinit the DB and apply the latest schema use docker run with the ```-e REINIT_DB=1``` option
-
 
 #### On host create mysql shared dir
     mkdir -p /var/openbmp/mysql
@@ -60,18 +51,18 @@ When starting the container you will need to map a host file system to **/data/m
 
 > The mode of 777 can be changed to chown <user> but you'll have to get that ID 
 > by looking at the file owner after starting the container. 
-    
-
+ 
+#### NOTE: To reinit the DB and apply the latest schema use docker run with the ```-e REINIT_DB=1``` option.
+- - -    
 ### 4) Run docker container
 
-#### Define API_FQDN
-Make sure to define ***API_FQDN*** as a hostname (or fqdn) and not by IP.  The hostname should
-resolve to the docker host (*host that runs docker containers*) IP address, which is normally
+### **IMPORTANT: Define API_FQDN**
+You **MUST** define the **KAFKA_FQDN** as a 'hostname' (or fqdn) and not by IP. The hostname should resolve to the docker host (*host that runs docker containers*) IP address, which is normally
 eth0.
 
-If you do not plan to connect to the docker container via Kafka consumers, then you can use any 
-hostname, such as *openbmp.localdomain*
-> #### Memory for MySQL
+If you do not plan to connect to the docker container via Kafka consumers, then you can use any hostname, such as *openbmp.localdomain*
+
+> ### Memory for MySQL
 > Mysql requires a lot of memory in order to run well.   Currently there is not a  consistent way to check on the container memory limit. The ```-e MEM=size_in_GB`` should be specified in gigabytes (e.g. 16 for 16GB of RAM).   If you fail to supply this variable, the default will use **/proc/meminfo** .  In other words, the default is to assume no memory limit. 
 
 #### Environment Variables
@@ -79,13 +70,11 @@ Below table lists the environment variables that can be used with ``docker -e <n
 
 NAME | Value | Details
 :---- | ----- |:-------
-**API\_FQDN** | hostname | **required** Fully qualified hostname for the docker host of this container, will be used for API and Kafka. It is also the collector Admin Id
+**API\_FQDN** | hostname | **REQUIRED** Fully qualified hostname for the docker host of this container, will be used for API and Kafka. It is also the collector Admin Id
 MEM | RAM in GB | The size of RAM allowed for container in gigabytes. (e.g. ```-e MEM=15```)
 OPENBMP_BUFFER | Size in MB | Defines the openbmpd buffer per router for BMP messages. Default is 16 MB.  
 MYSQL\_ROOT\_PASSWORD | password | MySQL root user password.  The default is **OpenBMP**.  The root password can be changed using [standard MySQL instructions](https://dev.mysql.com/doc/refman/5.6/en/resetting-permissions.html).  If you do change the password, you will need to run the container with this env set.
 MYSQL\_OPENBMP\_PASSWORD | password | MySQL openbmp user password.  The default is **openbmp**.  You can change the default openbmp user password using [standard mysql instructions](https://dev.mysql.com/doc/refman/5.6/en/set-password.html).  If you change the openbmp user password you MUST use this env.  
-
-
 
 
 #### Run Normally
@@ -98,9 +87,9 @@ MYSQL\_OPENBMP\_PASSWORD | password | MySQL openbmp user password.  The default 
 
 > ### Allow at least a few minutes for mysql to init the DB on first start
 
+- - -
 
-
-### Monitoring/Troubleshooting
+## Monitoring/Troubleshooting
 Once the container is running you can run a **HTTP GET http://docker_host:8001/db_rest/v1/routers** to test that the API interface is working. 
 
 You can use standard docker exec commands to monitor the log files.  To monitor 
@@ -113,7 +102,7 @@ Alternatively, it can be easier at times to navigate all the log files from with
 #### System Start/Restart Config (ubuntu 16.04)
 By default, the containers will not start automatically on system boot/startup.  You can use the below example to instruct the openbmp/aio container to start automatically. 
 
-You can read more at [Docker Host Integration](https://docs.docker.com/articles/host_integration/) on how to start containers automatically. 
+You can read more at [Docker Admin Guide](https://docs.docker.com/engine/admin/start-containers-automatically/) on how to start containers automatically. 
 
 > #### IMPORTANT
 > The ```--name=openbmp_aio``` parameter given to the ```docker run``` command is used with the ```-a openbmp_aio``` parameter below to start the container by name instead of container ID.  You can use whatever name you want, but make sure to use the same name used in docker run.
@@ -154,7 +143,7 @@ First install either the **Server** or **Cloud** standard Ubuntu image available
 
 
 > #### NOTE
-> Our builds of openbmpd statically links librdkafka so that you do not have to compile/install that. If needed, see [BUILD](BUILD.md) for details on how to build/install librdkafka.
+> Our builds of openbmpd statically links librdkafka so that you do not have to compile/install that. If needed, see [BUILD](build) for details on how to build/install librdkafka.
 
 
 ### Before using 'apt-get' do the following to make sure the repositories are up-to-date
@@ -165,11 +154,11 @@ sudo apt-get update
 
 ### Install openbmp via package
 
-  1. Download the openbmp
+  1. Download openbmp [package for Ubuntu 14.04](https://build-jenkins-int.snas.io:8443/job/openbmp-server-ubuntu-trusty/lastSuccessfulBuild/artifact/build/deb_package
+  )
+     (works with Ubuntu 16.04).
       
-      [package for Ubuntu 14.04](http://www.openbmp.org/#!download.md)
-      
-  1. Install the package  - *You should have the depends already installed if you applied the above step.*
+  1. Install the package  - **You should have the depends already installed if you applied the above step.**
       
       **dpkg -i openbmp-VERSION.deb**
   
@@ -184,17 +173,12 @@ Processing triggers for ureadahead (0.100.0-16) ...
 
 #### If installing from source
 
-Follow the steps in [BUILD](BUILD.md) to install via source from github.
+Follow the steps in [BUILD](build) to install via source from github.
 
 ### Install openbmp mysql consumer
 
-  1. Download the openbmp-mysql-consumer
+  1. Download the openbmp-mysql-consumer [Download Page](https://build-jenkins-int.snas.io:8443/job/openbmp-mysql-consumer/lastSuccessfulBuild/artifact/target/)
       
-      [Download Page](http://www.openbmp.org/#!download.md)
-      
-      ```
-      wget http://www.openbmp.org/packages/openbmp-mysql-consumer-0.1.0-081315.jar
-      ```  
       
 > #### NOTE
 > The consumer is a JAR file that is runnable using java -jar [filename].  In the near future this will be packaged in a DEB package so that you start it using 'service openbmp-mysql-consumer start'.  For now, you will need to run this JAR file via shell command.  See the last step regarding running the consumer for how to run it. 
@@ -203,7 +187,8 @@ Follow the steps in [BUILD](BUILD.md) to install via source from github.
 
 Follow the [Kafka Quick Start](http://kafka.apache.org/documentation.html#quickstart) guide in order to install and configure Apache Kafka.  You should have it up in running within minutes. 
 
-note: Edit the **config/server.properties** file and make sure to define a valid FQDN  for the variable **advertised.host.name** .  
+> #### NOTE 
+> Edit the **config/server.properties** file and make sure to define a valid FQDN  for the variable **advertised.host.name** .  
 
 The collector (producer) and consumers will connect to Kafka and receive the **advertised.host.name** as where it should contact the server.  If this is set to localhost the producer/consumer will not be able to connect successfully to Kafka, unless of course everything is running on a single node.
 
@@ -247,20 +232,25 @@ nohup bin/kafka-server-start.sh config/server.properties > kafka.log &
 
 ### On DB server install mysql
 
-> ### Note on MariaDB
+> #### NOTE on MariaDB
 > You can use MariaDB 10.0 or greater as well.  We have tested and validated that
 > the schema and settings work with MariaDB >= 10.0
 > 
-> You can get instructions for installing MariaDB at [MariaDB Repositories](https://downloads.mariadb.org/mariadb/repositories/#mirror=digitalocean-nyc).  Make sure you **select 10.0**
+> You can get instructions for installing MariaDB at [MariaDB Repositories](https://downloads.mariadb.org/mariadb/repositories/#mirror=digitalocean-nyc).  Make sure you **select 10.2**
 
 
 ```
-sudo apt-get install mysql-server-5.6
+sudo apt-get install software-properties-common
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.2/ubuntu xenial main'
+apt-get install mariadb-server
+sudo apt update
+sudo apt install mariadb-server
 ```
 
 * Install will prompt for a mysql root password, use one for the primary mysql user 'root'
 
-> **NOTE**
+> #### NOTE
 > The root password in mysql is the MYSQL root user account.  This can be any password you would 
 > like to use. It is not related to the platform/system root user or any other user.  This password is only the primary "root" password used when using '**mysql -u root -p**'
 
