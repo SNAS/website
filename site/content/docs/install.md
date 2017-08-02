@@ -10,7 +10,8 @@ date: 2017-05-07T15:04:10.000Z
 (Prerequisite) Platform Docker Install
 --------------------------------------
 
-> Ignore this step if you already have a current docker install. Go to [Install SNAS Using Docker](#install-snas-using-docker)
+> Ignore this step if you already have a current docker install. Follow instructions from the submenu on left to install
+a SNAS docker image.
 
 > #### NOTE
 > You should use the latest docker version, documented in this section.
@@ -41,17 +42,7 @@ service docker start
 ```
 
 ### All Linux Distributions
-Follow the [Docker Install Instructions](http://docs.docker.com/installation/) for your distro/platform. 
-
-
-## Install SNAS Using Docker
-Each docker file contains a readme file, see below:
-
-* [All-In-One](install_aio)
-* [UI](install_ui)
-* [Collector](install_collector)
-* [Kafka](install_kafka)
-* [MySQL](install_mysql)
+Follow the [Docker Install Instructions](http://docs.docker.com/installation/) for your distro/platform.
 
 Install SNAS Using docker-compose
 ----------------------------

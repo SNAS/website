@@ -29,20 +29,41 @@ menu:
         - href: requirements
           label: Requirements
           parent: '#getting_started'
-        - href: install
-          label: Docker Install
+        - href: '#install_sub_menu'
+          label: SNAS Docker
           parent: '#getting_started'
+          items:
+            - href: install
+              label: Install Docker
+              parent: '#install_sub_menu'
+            - href: install_aio
+              label: All-In-One Docker
+              parent: '#install_sub_menu'
+            - href: install_ui
+              label: UI Docker
+              parent: '#install_sub_menu'
+            - href: install_collector
+              label: Collector Docker
+              parent: '#install_sub_menu'
+            - href: install_kafka
+              label: Kafka Docker
+              parent: #install_sub_menu'
+            - href: install_mysql
+              label: MySQL Docker
+              parent: '#install_sub_menu'
         - href: build
           label: Building Source
           parent: '#getting_started'
 
     - href: '#usecases'
       label: Use Cases
+      parent: '#sidebar'
       icon: fa-user
       items:
 
     - href: '#configs'
       label: Configuration
+      parent: '#sidebar'
       icon: fa-cog
       items:
         - href: router_config
@@ -52,6 +73,7 @@ menu:
 
     - href: '#develop_api'
       label: SDK's and API's
+      parent: '#sidebar'
       icon: fa-code
       items:
         - href: message_bus_api
@@ -62,6 +84,7 @@ menu:
 
     - href: '#develop_int'
       label: Developer Integration
+      parent: '#sidebar'
       icon: fa-code
       items:
         - href: consumer_developer_integration
@@ -71,6 +94,7 @@ menu:
 
     - href: '#troubleshooting'
       label: Troubleshooting
+      parent: '#sidebar'
       icon: fa-child
       items:
 ---
