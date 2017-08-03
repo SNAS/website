@@ -7,17 +7,21 @@ date: 2017-05-07T15:04:10.000Z
 
 <!--more-->
 
+Use these instructions to install SNAS using docker containers.
+ 
+
 (Prerequisite) Platform Docker Install
 --------------------------------------
 
-> Ignore this step if you already have a current docker install. Go to [Install SNAS Using Docker](#install-snas-using-docker)
+If you already have docker installed on your host you can skip this step and go to [Install SNAS Using Docker](#install-snas-using-docker).
+
+### **All Linux Distributions**
+Follow the [Docker Install Instructions](http://docs.docker.com/installation/) for your distro/platform. You should always use the latest docker version.
+
+### **CentOS 6**
 
 > #### NOTE
-> You should use the latest docker version, documented in this section.
-
-### CentOS 6
-
-> #### CentOS 7 works fine by following the docker install instructions, so they are not documented here. 
+> CentOS 7 works fine by following the [Docker Install Instructions](http://docs.docker.com/installation/), so they are not documented here. 
 
 The below are steps for how to install docker on CentOS 6.
 
@@ -39,9 +43,6 @@ export https_proxy="http://proxy.blah.com:80"
 # Start docker
 service docker start 
 ```
-
-### All Linux Distributions
-Follow the [Docker Install Instructions](http://docs.docker.com/installation/) for your distro/platform. 
 
 
 ## Install SNAS Using Docker

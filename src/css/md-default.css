@@ -1,8 +1,8 @@
 /* Markdown default styles */
 
 /*.md-default p {*/
-    /*max-width: 90%;*/
-    /*padding: 8px 8px 8px 8px;*/
+/*max-width: 90%;*/
+/*padding: 8px 8px 8px 8px;*/
 /*}*/
 
 
@@ -16,17 +16,41 @@
     quotes: "\201C""\201D""\2018""\2019";
 }
 
+.md-default blockquote blockquote  {
+    background: #f9f9f9;
+    border-left: 8px solid #ccc;
+    font-size: 0.8em;
+    color: #424040;
+    margin: 1em 10px;
+    padding: 0em 10px 1em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+.md-default pre  {
+    overflow: hidden;
+    margin-top: 10px;
+}
+
 /* ---------------------------------
     Headings
  */
 .md-default h1 {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.7em;
+}
+.md-default h2 {
+    font-weight: bold;
+    font-size: 1.6em;
 }
 
-.md-default h3, .md-default h4 {
-    padding-top: 2em;
-}
+.md-default h3 {
+    padding-top: 0.5em;
+    font-size: 1.2em;
+
+}.md-default h4 {
+    padding-top: 0.5em;
+    font-size: 1.1em;
+ }
 
 .md-default h5 {
     margin: 1em 0.5em 1em 0.5em;
@@ -41,9 +65,10 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
     padding-top: 1em;
     display: table;
+    min-width: 90%;
 }
 
 .md-default li {
@@ -67,11 +92,19 @@
     padding-right: 0.5em;
     color:#f40;
     display: table-cell;
+    width: 1em;
 }
 
 /* Change the unordered bullet to a star */
 .md-default ul>li:before {
-    content:"✱";
+    content:"✸";
+    margin-right: 0px;
+
+}
+.md-default ul ul>li:before {
+    content:"∙";
+    margin-right: 0px;
+
 }
 
 .md-default ol ol,.md-default ul ul {
@@ -91,6 +124,7 @@
     /*content: counter(section, lower-alpha);*/
     content: counters(section, ".", lower-alpha) ". ";
 }
+
 
 /* -----------------------------
     Tables
@@ -161,4 +195,3 @@
 /*.cms ol>li:before{font-weight:800;left:-18px;left:-1rem;position:absolute;height:100%;content:counter(a);counter-increment:a;color:#f40}*/
 /*.cms blockquote{background-color:#f5f3f2;display:block;border-radius:.25rem;padding:18px;padding:1rem;color:#f40;font-weight:700;font-size:22.5px;font-size:1.25rem;margin-bottom:18px;margin-bottom:1rem}*/
 /*.cms blockquote p{margin:0}*/
-

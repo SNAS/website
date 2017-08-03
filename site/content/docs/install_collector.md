@@ -4,19 +4,23 @@ date: 2017-05-07T15:04:10.000Z
 ---
 
 SNAS Collector Docker Install Steps
-==============================================
+===================================
 
 <!--more-->
 
-Collector container is the container for collecting BMP messages from BMP senders, e.g. routers. This container can be distributed.
+Collector container is used for collecting BMP messages from BMP senders, e.g. routers. This container can be distributed.
 
-### Container Includes
+### Container Includes:
 * **Openbmpd** - Latest collector (listening port is TCP 5000)
 
-### Recommended Current Linux Distributions
+### Recommended Current Linux Distributions:
 
-  1. Ubuntu 16.04/Trusty
+  1. Ubuntu 16.04/Xenial
   1. CentOS 7/RHEL 7
+
+### **Installation Steps**
+
+- - -
 
 ### 1) Install docker
 Docker host should be **Linux x86_64**.   Follow the [Docker Instructions](https://docs.docker.com/installation/) to install docker.  
@@ -29,9 +33,10 @@ Docker host should be **Linux x86_64**.   Follow the [Docker Instructions](https
 
 - - -
 
-### 3) [OPTIONAL] Add persistent configs
+### 3) Add persistent configs [OPTIONAL] 
 
-#### On host create persistent config location
+
+#### On host create persistent config location:
 
     mkdir -p /var/openbmp/config
     chmod 777 /var/openbmp/config
@@ -42,10 +47,11 @@ using a persistent hosts file.
 
 Run docker with ```-v /var/openbmp/config:/config``` to make use of the persistent config files.
 
-#### config/openbmpd.conf
-You can provide a customized **openbmpd.conf**.  See [Config Example](https://github.com/OpenBMP/openbmp/blob/master/Server/openbmpd.conf)
-
 You can also add other hosts into a container’s /etc/hosts file by using one or more --add-host flags. 
+
+#### config/openbmpd.conf
+You can provide a customized **openbmpd.conf**.  See [Config Example](https://github.com/OpenBMP/openbmp/blob/master/Server/openbmpd.conf) in github.
+
 
 ### 4) Run docker container
 
@@ -60,11 +66,13 @@ OPENBMP\_BUFFER | Size in MB | Defines the openbmpd buffer per router for BMP me
 
 #### Run normally
 
-> ##### IMPORTANT
-> You must define the **KAFKA_FQDN** as a 'hostname'.  If all containers are running on the same node, this
-> hostname can be local specific, such as 'localhost' or 'myhost'. If Kafka is running on a different server,
-> than the consumers and producers, then the KAFKA_FQDN should be a valid hostname that can be resolved using DNS.
-> This can be internal DNS or manually done by updating the /etc/hosts file on each machine.
+- - -
+
+### **IMPORTANT:** You **MUST define the KAFKA_FQDN** as a **'hostname'** (or fqdn) and not by IP. 
+#### If all containers are running on the same node, this hostname can be local specific, such as 'localhost' or 'myhost'. 
+#### If Kafka is running on a different server than the consumers and producers, then the KAFKA_FQDN should be a valid hostname that can be resolved using DNS. This can be internal DNS or manually done by updating the /etc/hosts file on each machine.
+
+- - -
 
     docker run -d --name=openbmp_collector -e KAFKA_FQDN=localhost \
          -v /var/openbmp/config:/config \
@@ -72,31 +80,32 @@ OPENBMP\_BUFFER | Size in MB | Defines the openbmpd buffer per router for BMP me
          openbmp/collector
 
 
-### Monitoring/Troubleshooting
+### **Monitoring/Troubleshooting**
 
-You can use standard docker exec commands to monitor the log files.  To monitor 
-openbmp, use ```docker exec openbmp_collector tail -f /var/log/openbmpd.log```
+You can use standard docker exec commands to monitor the log files.  To monitor collector, use: 
+
+    docker exec openbmp_collector tail -f /var/log/openbmpd.log
 
 Alternatively, it can be easier at times to navigate all the log files from within the container. You can do so using:
     
     docker exec -it openbmp_collector bash
 
+You can monitor the docker container by getting the console logs. This is useful if the container exits due to invalid start or for another reason.
 
-#### docker logs
-You can use ```docker logs openbmp_collector``` to get the console logs. This is useful if the container exits due to
-invalid start or for another reason.
+    docker logs openbmp_collector
+    
 
-#### System Start/Restart Config (ubuntu 14.04)
-By default, the containers will not start automatically on system boot/startup.
+### **System Start/Restart Config (Ubuntu 16.04/Xenial)**
+By default, the containers will not start automatically on system boot/startup.  You can use the below example to instruct the openbmp/aio container to start automatically. 
+
+You can read more at [Docker Admin Guide](https://docs.docker.com/engine/admin/start-containers-automatically/) on how to start containers automatically. 
 You can use the below example to instruct the container to start automatically.
-
-You can read more at [Docker Host Integration](https://docs.docker.com/articles/host_integration/) on how to start containers automatically. 
 
 > #### IMPORTANT
 > The ```--name=openbmp_collector``` parameter given to the ```docker run``` command is used with the ```-a openbmp_collector``` parameter below to start the container by name instead of container ID.  You can use whatever name you want, but make sure to use the same name used in docker run.
 
     cat <<END > /etc/init/collector-openbmp.conf
-    description "OpenBMP Collector container"
+    description "SNAS Collector container"
     author "tim@openbmp.org"
     start on filesystem and started docker
     stop on runlevel [!2345]
