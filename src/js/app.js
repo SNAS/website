@@ -62,7 +62,7 @@
 // Add "active" class to list-item-group when clicked.  Remove class when not active
 
 jQuery(document).ready(function() {
-
+    
     $("a.list-group-item").click(function (e) {
         // e.preventDefault();
 
