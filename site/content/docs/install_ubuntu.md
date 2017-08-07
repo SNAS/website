@@ -38,7 +38,7 @@ sudo apt-get update
 
 ### **Install collector (openbmpd) via package**
 
-   1. Download openbmpd [package for Ubuntu 14.04](https://build-jenkins-int.snas.io:8443/job/openbmp-server-ubuntu-trusty/lastSuccessfulBuild/artifact/build/deb_package). Works with Ubuntu 16.04.
+   1. Download openbmpd [package for Ubuntu 14.04](https://build-jenkins.snas.io:8443/job/openbmp-server-ubuntu-trusty/lastSuccessfulBuild/artifact/build/deb_package). Works with Ubuntu 16.04.
 
    1. Install the package.                                                                                         
    
@@ -69,7 +69,7 @@ Follow the steps in [BUILD](build) to install via source from github.
 
 ### **Install MySQL consumer**
 
-  Download the openbmp-mysql-consumer [package](https://build-jenkins-int.snas.io:8443/job/openbmp-mysql-consumer/lastSuccessfulBuild/artifact/target/).
+  Download the openbmp-mysql-consumer [package](https://build-jenkins.snas.io:8443/job/openbmp-mysql-consumer/lastSuccessfulBuild/artifact/target/).
       
       
 > #### NOTE
@@ -249,7 +249,7 @@ Load the openbmp DB schema by downloading it from www.openbmp.org.  You can also
 latest from [GitHub OpenBMP](https://github.com/OpenBMP/openbmp)
 
 > #### Choose the right schema
-> See the [download](https://build-jenkins-int.snas.io:8443/job/openbmp-mysql-consumer/ws/database/)
+> See the [download](https://build-jenkins.snas.io:8443/job/openbmp-mysql-consumer/ws/database/)
  page for details on which schema to use for which package.
 
 **Latest/Current DEB package uses the current schema as below**

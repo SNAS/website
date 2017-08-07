@@ -80,7 +80,7 @@ Below table lists the environment variables that can be used with ``docker -e <n
 
 NAME | Value | Details
 :---- | ----- |:-------
-**API\_FQDN** | hostname | **REQUIRED** Fully qualified hostname for the docker host of this container, will be used for API and Kafka. It is also the collector Admin Id
+**KAFKA\_FQDN** | hostname | **REQUIRED** Fully qualified hostname for the docker host of this container, will be used for API and Kafka. It is also the collector Admin Id
 MEM | RAM in GB | The size of RAM allowed for container in gigabytes. (e.g. ```-e MEM=15```)
 OPENBMP_BUFFER | Size in MB | Defines the openbmpd buffer per router for BMP messages. Default is 16 MB.  
 MYSQL\_ROOT\_PASSWORD | password | MySQL root user password.  The default is **OpenBMP**.  The root password can be changed using [standard MySQL instructions](https://dev.mysql.com/doc/refman/5.6/en/resetting-permissions.html).  If you do change the password, you will need to run the container with this env set.
@@ -89,7 +89,7 @@ MYSQL\_OPENBMP\_PASSWORD | password | MySQL openbmp user password.  The default 
 
 #### Run Normally
 
-    docker run -d -e API_FQDN=<hostname> --name=openbmp_aio -e MEM=15 \
+    docker run -d -e KAFKA_FQDN=<hostname> --name=openbmp_aio -e MEM=15 \
          -v /var/openbmp/mysql:/data/mysql \
          -v /var/openbmp/config:/config \
          -p 3306:3306 -p 2181:2181 -p 9092:9092 -p 5000:5000 -p 8001:8001 \

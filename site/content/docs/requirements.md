@@ -3,8 +3,10 @@ title: "Requirements"
 date: 2017-01-04T15:04:10.000Z
 ---
 
-Runtime Requirements *(When running openbmpd and mysql)*
----------------------------------------------------------
+Runtime Requirements 
+---------------------
+*When running openbmpd and mysql*
+-----------------------------------
 
 <!--more-->
 
@@ -15,7 +17,6 @@ Various requirements and suggested system configurations for runtime and build i
 * **MySQL 5.7 or MairaDB 10.2 Series or greater**
 
 ### Shared Libraries
-* **MySQL/MariaDB C++ Connector version 1.1.0 or greater** 
 * **MySQL/MariaDB Client libraries version 5.7 / 10.2 or greater**
 * **libstdc++6 Version 4.6.x or greater**  (gcc version 4.6.x or greater)
 
@@ -48,23 +49,23 @@ The database is CPU, memory, and disk intensive. It's recommended that the datab
 
 
 
-BUILD/Development Requirements *(When compiling and building openbmpd from source)*
-------------------------------------------------------------------------------------
+BUILD/Development Requirements 
+------------------------------
+*When compiling and building openbmpd from source*
+-----------------------------------------------------
 
 ### Database *(same as runtime requirement)*
 * **MySQL 5.7 or MairaDB 10.2 Series or greater**
 
 ### Shared Libraries *(same as runtime plus extras for development)*
-* **MySQL/MariaDB C++ Connector version 1.1.0 or greater** 
 * **MySQL/MariaDB Client libraries version 5.7 / 10.2 or greater**
 * **libstdc++6 Version 4.6.x or greater**  (gcc version 4.6.x or greater)
 
 ### Development Libraries and Headers
 * **Boost Headers 0.41.0** or greater
 * **Gcc/G++/STDC++ 4.6.x** or greater
-* **MySQL Client development headers/lib 5.7** or greater
-* **MySQL C++ connector development headers/lib 1.1.0** or greater
 * **CMake 2.8.x** or greater
+* **[Librdkafka](https://github.com/edenhill/librdkafka) 0.9.5** or greater
 
 > #### NOTE
 > MariaDB should work, but this has not been tested yet.  Testing will be performed for CentOS7/RHEL7 installs.

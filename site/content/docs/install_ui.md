@@ -15,10 +15,6 @@ The UI container includes:
 * **nginx** - Web Server
 * **ui** - SNAS UI
 
-> #### NOTE
-> **Link-State SPF** stored procedures are **not** included.  Request them from *tievens@cisco.com*
-> if you plan to use link-state with path visualizations.
-
 ### Recommended Current Linux Distributions
 
   1. Ubuntu 16.04/Xenial
