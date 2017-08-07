@@ -60,8 +60,8 @@ Below table lists the environment variables that can be used with ``docker run -
 
 NAME | Value | Details
 :---- | ----- |:-------
-KAFKA\_FQDN | hostanme or IP | Kafka broker hostname[:port].  Hostname can be an IP address
-OPENBMP\_ADMIN\_ID | name or IP | Name or IP of the collector, default is the docker hostname
+**KAFKA\_FQDN** | hostname | **REQUIRED**. Fully qualified hostname for the docker host of this container. Will be used for API and Kafka. It is also the default OPENBMP_ADMIN_ID.
+OPENBMP\_ADMIN\_ID | name or IP | Name or IP of the collector, default is the docker hostname.
 OPENBMP\_BUFFER | Size in MB | Defines the openbmpd buffer per router for BMP messages. Default is 16 MB.
 
 #### Run normally

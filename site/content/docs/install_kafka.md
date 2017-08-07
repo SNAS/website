@@ -54,8 +54,7 @@ Below table lists the environment variables that can be used with ``docker -e <n
 
 NAME | Value | Details
 :---- | ----- |:-------
-**KAFKA\_FQDN** | hostname | **required** Fully qualified hostname for the docker host/IP of this container, will be used for Kakfa.
-
+**KAFKA\_FQDN** | hostname | **REQUIRED**. Fully qualified hostname for the docker host of this container. Will be used for API and Kafka. It is also the default OPENBMP_ADMIN_ID.
 #### Run normally
 
 - - -
