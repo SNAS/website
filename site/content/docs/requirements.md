@@ -65,7 +65,7 @@ BUILD/Development Requirements
 * **Boost Headers 0.41.0** or greater
 * **Gcc/G++/STDC++ 4.6.x** or greater
 * **CMake 2.8.x** or greater
-* **[Librdkafka](https://github.com/edenhill/librdkafka) 0.9.5** or greater
+* **[librdkafka](https://github.com/edenhill/librdkafka) 0.9.5** or greater
 
 > #### NOTE
 > MariaDB should work, but this has not been tested yet.  Testing will be performed for CentOS7/RHEL7 installs.

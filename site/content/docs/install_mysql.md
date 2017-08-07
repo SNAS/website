@@ -10,7 +10,7 @@ SNAS MySQL Docker Install Steps
 MySQL container includes MariaDB, MySQL consumer and the REST API.  This container providers everything needed
 to get started with collecting data from the SNAS collector Kafka integration.
 
-#### Container Includes
+#### Container Includes:
 * **MariaDB 10.2** - MySQL server (listening port TCP 3306)
 * **SNAS MySQL Consumer** - Latest Consumer that puts all data into MySQL
 * **DB_REST** - Latest REST interface for MySQL database

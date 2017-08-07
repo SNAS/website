@@ -57,7 +57,7 @@ Each docker file contains a readme file, see below:
 
 ## Install SNAS Using docker-compose
 
-As alternative to AIO docker image, Collector/Kafka/MySQL can be started up using [docker-compose](https://docs.docker.com/compose/install/)
+As alternative to AIO docker image, Collector/Kafka/MySQL can be started up using [docker-compose](https://docs.docker.com/compose/install/).
 
 ```
 docker-compose up
