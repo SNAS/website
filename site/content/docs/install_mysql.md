@@ -102,23 +102,26 @@ MYSQL\_OPENBMP\_PASSWORD | password | MySQL openbmp user password.  The default 
 
 
 ### **Monitoring/Troubleshooting**
+You can navigate all the log files from within the container. Connect to container using:
+    
+    docker exec -it openbmp_mysql bash
+
+Or, you can use standard docker exec commands on host to monitor the log files.  To monitor logs, use: 
+
+    docker exec openbmp_mysql tail -f /var/log/*.log
+
+Or, you can monitor the docker container by getting the console logs. This is useful if the container exits due to invalid start or for another reason. 
+To see console logs for collector, use:
+
+    docker logs openbmp_mysql
+    
+
 Once the container is running you can connect to MySQL database using any ODBC/JDBC/MySQL client.
 
 You can also connect to the database REST interface on port 8001.  For example: 
 
     http://localhost:8001/db_rest/v1/routers
 
-You can use standard docker exec commands to monitor the log files.  To monitor MySQL, use:
- 
-    docker exec openbmp_mysql tail -f /var/log/*.log
-
-Alternatively, it can be easier at times to navigate all the log files from within the container. You can connect to the docker container using:
-    
-    docker exec -it openbmp_mysql bash
-
-You can monitor the docker container by getting the console logs. This is useful if the container exits due to invalid start or for another reason.
-
-    docker logs openbmp_mysql
 
 ### **System Start/Restart Config (Ubuntu 16.04/Xenial)**
  By default, the containers will not start automatically on system boot/startup.  You can use the below example to instruct the container to start automatically.

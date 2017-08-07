@@ -100,18 +100,24 @@ MYSQL\_OPENBMP\_PASSWORD | password | MySQL openbmp user password.  The default 
 
 
 ### **Monitoring/Troubleshooting**
-Once the container is running you can run a HTTP GET to test that the API interface is working: 
-
-    http://docker_host:8001/db_rest/v1/routers
-    
-You can use standard docker exec commands to monitor the log files.  To monitor collector, use: 
-
-    docker exec openbmp_aio tail -f /var/log/openbmpd.log
-
-Alternatively, it can be easier at times to navigate all the log files from within the container. You can do so using:
+You can navigate all the log files from within the container. Connect to container using:
     
     docker exec -it openbmp_aio bash
 
+Or, you can use standard docker exec commands on host to monitor the log files.  To monitor collector, use: 
+
+    docker exec openbmp_aio tail -f /var/log/openbmpd.log
+
+Or, you can monitor the docker container by getting the console logs. This is useful if the container exits due to invalid start or for another reason. 
+To see console logs for AIO, use:
+
+    docker logs openbmp_aio
+
+
+Once the container is running you can run a HTTP GET on your browser to test that the API interface is working: 
+
+    http://docker_host:8001/db_rest/v1/routers
+    
 ### **System Start/Restart Config (Ubuntu 16.04/Xenial)**
 By default, the containers will not start automatically on system boot/startup.  You can use the below example to instruct the openbmp/aio container to start automatically. 
 

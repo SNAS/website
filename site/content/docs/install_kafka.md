@@ -75,22 +75,23 @@ NAME | Value | Details
 
 
 ### **Monitoring/Troubleshooting**
-
-You can use standard docker exec commands to monitor the log files.  To monitor kafka, use:
- 
-    docker exec openbmp_kafka tail -f /var/log/*.log
-
-Alternatively, it can be easier at times to navigate all the log files from within the container. You can connect to the container using:
-
+You can navigate all the log files from within the container. Connect to container using:
+    
     docker exec -it openbmp_kafka bash
 
-You can also monitor one of the topics to see messages.  For example, you can monitor the openbmp.parsed.unicast_prefix topic using:
+Or, you can use standard docker exec commands on host to monitor the log files.  To monitor logs, use: 
+
+    docker exec openbmp_kafka tail -f /var/log/*.log
+
+Or, you can monitor the docker container by getting the console logs. This is useful if the container exits due to invalid start or for another reason. 
+To see console logs for collector, use:
+
+    docker logs openbmp_kafka
+    
+You can also monitor individual Kafka topics to see messages.  For example, you can monitor the openbmp.parsed.unicast_prefix topic using:
 
     docker exec openbmp_kafka /usr/local/kafka/bin/kafka-console-consumer.sh -z localhost --topic openbmp.parsed.unicast_prefix
 
-You can monitor the docker container by getting the console logs. This is useful if the container exits due to invalid start or for another reason.
-
-    docker logs openbmp_kafka
     
 ### **System Start/Restart Config (Ubuntu 16.04/Xenial)**
  By default, the containers will not start automatically on system boot/startup.  You can use the below example to instruct the container to start automatically.

@@ -81,16 +81,16 @@ OPENBMP\_BUFFER | Size in MB | Defines the openbmpd buffer per router for BMP me
 
 
 ### **Monitoring/Troubleshooting**
-
-You can use standard docker exec commands to monitor the log files.  To monitor collector, use: 
-
-    docker exec openbmp_collector tail -f /var/log/openbmpd.log
-
-Alternatively, it can be easier at times to navigate all the log files from within the container. You can do so using:
+You can navigate all the log files from within the container. Connect to container using:
     
     docker exec -it openbmp_collector bash
 
-You can monitor the docker container by getting the console logs. This is useful if the container exits due to invalid start or for another reason.
+Or, you can use standard docker exec commands on host to monitor the log files.  To monitor collector, use: 
+
+    docker exec openbmp_collector tail -f /var/log/openbmpd.log
+
+Or, you can monitor the docker container by getting the console logs. This is useful if the container exits due to invalid start or for another reason. 
+To see console logs for collector, use:
 
     docker logs openbmp_collector
     

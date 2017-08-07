@@ -66,18 +66,20 @@ You should be able to login to the UI by accessing [http://HOST:8000/](http://HO
 
 - - -
 
-### **Troubleshooting and Monitoring**
-You can use standard docker exec commands to monitor the log files.  To monitor tomcat, use:  
+### **Monitoring/Troubleshooting**
+You can navigate all the log files from within the container. Connect to container using:
+    
+    docker exec -it openbmp_ui bash
 
-```docker exec openbmp_ui tail -f /var/log/tomcat7/catalina.out```
+Or, you can use standard docker exec commands on host to monitor the log files.  To monitor logs, use: 
 
-Alternatively, it can be easier at times to navigate all the log files from within the container. You can connect to the docker container using:
+    docker exec openbmp_ui tail -f /var/log/*.log
+    docker exec openbmp_ui tail -f /var/log/tomcat7/catalina.out
 
-```docker exec -it openbmp_ui bash```
+Or, you can monitor the docker container by getting the console logs. This is useful if the container exits due to invalid start or for another reason. 
+To see console logs for collector, use:
 
-You can monitor the docker container by getting the console logs. This is useful if the container exits due to invalid start or for another reason.
-
-```docker logs openbmp_ui``` 
+    docker logs openbmp_ui
 
 - - -
 
