@@ -26,6 +26,9 @@ menu:
       icon: fa-cloud-download
 
       items:
+        - href: quick_start
+          label: Quick Start
+          parent: '#getting_started'
         - href: requirements
           label: Requirements
           parent: '#getting_started'
