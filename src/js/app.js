@@ -62,21 +62,7 @@
 // Add "active" class to list-item-group when clicked.  Remove class when not active
 
 jQuery(document).ready(function() {
-    $('.list-group-item').click(function(e) {
-        e.preventDefault(); // prevent the default action to open link
-        // console.log(e);
-
-        //var $this = $(this);
-        // var $alias = $this.data('alias'); // add data-alias="value"
-
-        // $this.text() contains the value of the clicked link
-        console.log("active click", $(this).text());
-
-        $(this).addClass('active').siblings().removeClass('active');
-
-    })
-
-
+    
     $("a.list-group-item").click(function (e) {
         // e.preventDefault();
 
@@ -88,12 +74,15 @@ jQuery(document).ready(function() {
         }
 
         $("#docsContent").load($(this).attr("href"));
-        $(window).scrollTop(0);
+        $(window).animate({ scrollTop: 0 }, "slow");
         //$("#docsContent").html('hello');
         // $("#docsContent").load('install');
 
         //
         // Prevent browsers default behavior to follow the link when clicked
+        $('#sidebar').find("a").removeClass('active');
+        $(this).addClass('active');
+
         return false;
     });
 
@@ -132,11 +121,18 @@ jQuery(document).ready(function() {
 
       // Default action for local tag refs (e.g. #tag)
       if ($(this).attr("href").startsWith("#")) {
-        return true;
-
+          // Prevent browsers default behavior to follow the link when clicked
+          $('html, body').animate({
+              scrollTop: $( $.attr(this, 'href') ).offset().top
+          }, 500);
       } else {
-        $("#docsContent").load($(this).attr("href"));
-        $(window).scrollTop(0);
+          $('#sidebar').find("a").removeClass('active');
+
+          $("#"+$(this).attr("href")).addClass('active');
+          // Prevent browsers default behavior to follow the link when clicked
+
+          $("#docsContent").load($(this).attr("href"));
+          $('html, body').animate({ scrollTop: 0 }, "slow");
       }
     }
 
