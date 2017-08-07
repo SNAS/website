@@ -30,7 +30,7 @@ menu:
           label: Requirements
           parent: '#getting_started'
         - href: '#install_sub_menu'
-          label: SNAS Docker
+          label: Docker Install
           parent: '#getting_started'
           items:
             - href: install
@@ -51,6 +51,9 @@ menu:
             - href: install_mysql
               label: MySQL Docker
               parent: '#install_sub_menu'
+        - href: install_ubuntu
+          label: Ubuntu Install
+          parent: '#getting_started'
         - href: build
           label: Building Source
           parent: '#getting_started'
