@@ -21,7 +21,7 @@ Various requirements and suggested system configurations for runtime and build i
 
 > #### NOTE
 > MariaDB should work, but this has not been tested yet.  Testing will be performed for CentOS7/RHEL7 installs.
-
+>Please email **tim@openbmp.org** if you would like CentOS/RHEL support sooner.  
 
 Server Requirements
 -------------------
@@ -67,7 +67,6 @@ BUILD/Development Requirements *(When compiling and building openbmpd from sourc
 * **CMake 2.8.x** or greater
 
 > #### NOTE
-> MariaDB should work development but this has not been tested yet.  Testing will be done
-> when CentOS 7/RHEL 7 builds are ready.  
->Please send **tim@openbmp.org** an email if you would like CentOS/RHEL support sooner.  
+> MariaDB should work, but this has not been tested yet.  Testing will be performed for CentOS7/RHEL7 installs.
+> Please email **tim@openbmp.org** if you would like CentOS/RHEL support sooner.  
 

@@ -46,6 +46,7 @@ service docker start
 
 
 ## Install SNAS Using Docker
+
 Each docker file contains a readme file, see below:
 
 * [All-In-One](install_aio)
@@ -54,9 +55,9 @@ Each docker file contains a readme file, see below:
 * [Kafka](install_kafka)
 * [MySQL](install_mysql)
 
-Install SNAS Using docker-compose
-----------------------------
-As alternative to [All In One](install_aio), docker image Collector, Kafka and Mysql can be started up using [docker-compose](https://docs.docker.com/compose/install/)
+## Install SNAS Using docker-compose
+
+As alternative to AIO docker image, Collector/Kafka/MySQL can be started up using [docker-compose](https://docs.docker.com/compose/install/)
 
 ```
 docker-compose up
