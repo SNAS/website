@@ -7,17 +7,21 @@ date: 2017-05-07T15:04:10.000Z
 
 <!--more-->
 
+Use these instructions to install SNAS using docker containers.
+ 
+
 (Prerequisite) Platform Docker Install
 --------------------------------------
 
-> Ignore this step if you already have a current docker install. Go to [Install SNAS Using Docker](#install-snas-using-docker)
+If you already have docker installed on your host you can skip this step and go to [Install SNAS Using Docker](#install-snas-using-docker).
+
+### **All Linux Distributions**
+Follow the [Docker Install Instructions](http://docs.docker.com/installation/) for your distro/platform. You should always use the latest docker version.
+
+### **CentOS 6**
 
 > #### NOTE
-> You should use the latest docker version, documented in this section.
-
-### CentOS 6
-
-> #### CentOS 7 works fine by following the docker install instructions, so they are not documented here. 
+> CentOS 7 works fine by following the [Docker Install Instructions](http://docs.docker.com/installation/), so they are not documented here. 
 
 The below are steps for how to install docker on CentOS 6.
 
@@ -40,11 +44,9 @@ export https_proxy="http://proxy.blah.com:80"
 service docker start 
 ```
 
-### All Linux Distributions
-Follow the [Docker Install Instructions](http://docs.docker.com/installation/) for your distro/platform. 
-
 
 ## Install SNAS Using Docker
+
 Each docker file contains a readme file, see below:
 
 * [All-In-One](install_aio)
@@ -53,9 +55,9 @@ Each docker file contains a readme file, see below:
 * [Kafka](install_kafka)
 * [MySQL](install_mysql)
 
-Install SNAS Using docker-compose
-----------------------------
-As alternative to [All In One](/docs/install_aio), docker image Collector, Kafka and Mysql can be started up using [docker-compose](https://docs.docker.com/compose/install/)
+## Install SNAS Using docker-compose
+
+As alternative to AIO docker image, Collector/Kafka/MySQL can be started up using [docker-compose](https://docs.docker.com/compose/install/).
 
 ```
 docker-compose up
