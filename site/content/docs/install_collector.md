@@ -55,24 +55,27 @@ You can provide a customized **openbmpd.conf**.  See [Config Example](https://gi
 
 ### 4) Run docker container
 
+
 #### Environment Variables
 Below table lists the environment variables that can be used with ``docker run -e <name=value>``
 
 NAME | Value | Details
 :---- | ----- |:-------
-**KAFKA\_FQDN** | hostname | **REQUIRED**. Fully qualified hostname for the docker host of this container. Will be used for API and Kafka. It is also the default OPENBMP_ADMIN_ID.
+**KAFKA\_FQDN** | hostname | **REQUIRED**. Fully qualified hostname that can be resolved inside docker container (e.g. ```localhost```).
 OPENBMP\_ADMIN\_ID | name or IP | Name or IP of the collector, default is the docker hostname.
 OPENBMP\_BUFFER | Size in MB | Defines the openbmpd buffer per router for BMP messages. Default is 16 MB.
 
+- - -
+
+### **IMPORTANT:**
+### • You **MUST define the KAFKA_FQDN** as a **'hostname'** that can be resolved inside the docker container.
+### • We recommend to set it to 'localhost' (or '127.0.0.1') if you are not planning to have your own clients (consumers or producers) outside this container.
+### • KAFKA_FQDN is used by Kafka to advertise the leader (advertised.host.name) which handles all read and write requests for a partition. If it can not be resolved, there will be no messages published or consumed (without a clear error message in the logs).
+### • **If** you are planning to have **your own clients outside the container** that need access to Kafka running inside the docker container,  then the 'hostname' must be resolvable inside the container as well as on the hosts where the container and the clients are running.
+
+- - -
+
 #### Run normally
-
-- - -
-
-### **IMPORTANT:** You **MUST define the KAFKA_FQDN** as a **'hostname'** (or fqdn) and not by IP. 
-#### If all containers are running on the same node, this hostname can be local specific, such as 'localhost' or 'myhost'. 
-#### If Kafka is running on a different server than the consumers and producers, then the KAFKA_FQDN should be a valid hostname that can be resolved using DNS. This can be internal DNS or manually done by updating the /etc/hosts file on each machine.
-
-- - -
 
     docker run -d --name=openbmp_collector -e KAFKA_FQDN=localhost \
          -v /var/openbmp/config:/config \

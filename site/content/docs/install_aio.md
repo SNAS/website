@@ -65,12 +65,7 @@ To reinit the database and apply the latest schema use docker run with the ```-e
 
 ### 4) Run docker container
 
-- - -
 
-### **IMPORTANT:** You **MUST define the KAFKA_FQDN** as a **'hostname'** (or fqdn) and not by IP. 
-#### The hostname should resolve to the docker host (*host that runs docker containers*) IP address, which is normally eth0. If you do not plan to connect to the docker container via Kafka consumers, then you can use any hostname, such as *openbmp.localdomain*.
-
-- - -
 
 ### Memory for MySQL
 MySQL requires a lot of memory in order to run well.   Currently there is not a consistent way to check on the container memory limit. The ```-e MEM=size_in_GB`` should be specified in gigabytes (e.g. 16 for 16GB of RAM).   If you fail to supply this variable, the default will use **/proc/meminfo** .  In other words, the default is to assume no memory limit. 
@@ -80,16 +75,25 @@ Below table lists the environment variables that can be used with ``docker -e <n
 
 NAME | Value | Details
 :---- | ----- |:-------
-**KAFKA\_FQDN** | hostname | **REQUIRED**. Fully qualified hostname for the docker host of this container. Will be used for API and Kafka. It is also the default OPENBMP_ADMIN_ID.
+**KAFKA\_FQDN** | hostname | **REQUIRED**. Fully qualified hostname that can be resolved inside docker container (e.g. ```localhost```).
 MEM | RAM in GB | The size of RAM allowed for container in gigabytes. (e.g. ```-e MEM=15```)
 OPENBMP_BUFFER | Size in MB | Defines the openbmpd buffer per router for BMP messages. Default is 16 MB.  
 MYSQL\_ROOT\_PASSWORD | password | MySQL root user password.  The default is **OpenBMP**.  The root password can be changed using [standard MySQL instructions](https://dev.mysql.com/doc/refman/5.6/en/resetting-permissions.html).  If you do change the password, you will need to run the container with this env set.
 MYSQL\_OPENBMP\_PASSWORD | password | MySQL openbmp user password.  The default is **openbmp**.  You can change the default openbmp user password using [standard mysql instructions](https://dev.mysql.com/doc/refman/5.6/en/set-password.html).  If you change the openbmp user password you MUST use this env.  
 
+- - -
+
+### **IMPORTANT:**
+### • You **MUST define the KAFKA_FQDN** as a **'hostname'** that can be resolved inside the docker container.
+### • We recommend to set it to 'localhost' (or '127.0.0.1') if you are not planning to have your own clients (consumers or producers) outside this container.
+### • KAFKA_FQDN is used by Kafka to advertise the leader (advertised.host.name) which handles all read and write requests for a partition. If it can not be resolved, there will be no messages published or consumed (without a clear error message in the logs).
+### • **If** you are planning to have **your own clients outside the container** that need access to Kafka running inside the docker container,  then the 'hostname' must be resolvable inside the container as well as on the hosts where the container and the clients are running.
+
+- - -
 
 #### Run Normally
 
-    docker run -d -e KAFKA_FQDN=<hostname> --name=openbmp_aio -e MEM=15 \
+    docker run -d -e KAFKA_FQDN=localhost --name=openbmp_aio -e MEM=15 \
          -v /var/openbmp/mysql:/data/mysql \
          -v /var/openbmp/config:/config \
          -p 3306:3306 -p 2181:2181 -p 9092:9092 -p 5000:5000 -p 8001:8001 \
