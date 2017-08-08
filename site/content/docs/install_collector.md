@@ -68,10 +68,10 @@ OPENBMP\_BUFFER | Size in MB | Defines the openbmpd buffer per router for BMP me
 - - -
 
 ### **IMPORTANT:**
-### • You **MUST define the KAFKA_FQDN** as a **'hostname'** that can be resolved inside the docker container.
-### • We recommend to set it to 'localhost' (or '127.0.0.1') if you are not planning to have your own clients (consumers or producers) outside this container.
-### • KAFKA_FQDN is used by Kafka to advertise the leader (advertised.host.name) which handles all read and write requests for a partition. If it can not be resolved, there will be no messages published or consumed (without a clear error message in the logs).
-### • **If** you are planning to have **your own clients outside the container** that need access to Kafka running inside the docker container,  then the 'hostname' must be resolvable inside the container as well as on the hosts where the container and the clients are running.
+#### • You **MUST define the KAFKA_FQDN** as a **'hostname'** that can be resolved inside the docker container.
+#### • We recommend to set it to 'localhost' (or '127.0.0.1') if you are not planning to have your own clients (consumers or producers) outside this container.
+#### • KAFKA_FQDN is used by Kafka to advertise the leader (advertised.host.name) which handles all read and write requests for a partition. If it can not be resolved, there will be no messages published or consumed (without a clear error message in the logs).
+#### • **If** you are planning to have **your own clients outside the container** that need access to Kafka running inside the docker container,  then the 'hostname' must be resolvable inside the container as well as on the hosts where the container and the clients are running.
 
 - - -
 
