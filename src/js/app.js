@@ -131,12 +131,10 @@ jQuery(document).ready(function() {
     if (match && match.length > 1) {
 
       if (match[1]) {
-          console.log("1 history: ", window.history.state);
         // External link (e.g. http://blah)
         window.open($(this).attr("href"));
 
       } else if (match[2]) {
-          console.log("2 history: ", window.history.state);
 
           // Absolute link (e.g. /demo)
         //window.open($(this).attr("href"));
@@ -148,7 +146,6 @@ jQuery(document).ready(function() {
 
         // Default action for local tag refs (e.g. #tag)
       if ($(this).attr("href").startsWith("#")) {
-          console.log("3 history: ", window.history.state);
           // Prevent browsers default behavior to follow the link when clicked
           $('html, body').animate({
               scrollTop: $( $.attr(this, 'href') ).offset().top
@@ -156,9 +153,7 @@ jQuery(document).ready(function() {
       } else {
           history.pushState({page:$(this).attr("href")}, null, $(this).attr("href"));
           previous_url = $(this).attr("href");
-
-          console.log("4 history: ", window.history.state);
-
+          
           $('#sidebar').find("a").removeClass('active');
 
           $("#"+$(this).attr("href")).addClass('active');
