@@ -60,6 +60,9 @@ menu:
         - href: build
           label: Building Source
           parent: '#getting_started'
+        - href: db_geo_coding
+          label: Custom DB Geo-Coding          
+          parent: '#getting_started'
 
     - href: '#usecases'
       label: Use Cases
