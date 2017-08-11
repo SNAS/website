@@ -82,10 +82,10 @@ jQuery(document).ready(function() {
         //$("#docsContent").html('hello');
         // $("#docsContent").load('install');
 
-        //
         // Prevent browsers default behavior to follow the link when clicked
         $('#sidebar').find("a").removeClass('active');
         $(this).addClass('active');
+        
         return false;
     });
 
@@ -135,8 +135,7 @@ jQuery(document).ready(function() {
         window.open($(this).attr("href"));
 
       } else if (match[2]) {
-
-          // Absolute link (e.g. /demo)
+        // Absolute link (e.g. /demo)
         //window.open($(this).attr("href"));
         return true;
       }
@@ -144,16 +143,17 @@ jQuery(document).ready(function() {
     } else {
       // Relative link (e.g. getting_start)
 
-        // Default action for local tag refs (e.g. #tag)
+      // Default action for local tag refs (e.g. #tag)
       if ($(this).attr("href").startsWith("#")) {
           // Prevent browsers default behavior to follow the link when clicked
+
           $('html, body').animate({
               scrollTop: $( $.attr(this, 'href') ).offset().top
           }, 500);
       } else {
           history.pushState({page:$(this).attr("href")}, null, $(this).attr("href"));
           previous_url = $(this).attr("href");
-          
+
           $('#sidebar').find("a").removeClass('active');
 
           $("#"+$(this).attr("href")).addClass('active');
