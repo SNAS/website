@@ -95,21 +95,17 @@ jQuery(document).ready(function() {
 //            console.log("popstate current: ", e.originalEvent.state.page);
 //            console.log("previous is : ", previous_url);
             $('#sidebar').find("#" + previous_url).removeClass('active');
-            $('#sidebar').find("div.collapse").each(function() {
-                $(this).collapse('hide');
-            });
-
             previous_url = e.originalEvent.state.page;
-            $("#" + e.originalEvent.state.page).addClass('active');
+            var parent = ($('#sidebar').find("#" + previous_url))[0].parentNode;
+            $("#" + previous_url).addClass('active');
 
-            var parent = ($('#sidebar').find("#" + e.originalEvent.state.page))[0].parentNode;
             while (!($(parent).hasClass("list-group"))) {
-                console.log("parent is: ", parent);
+                $(parent).collapse('show');
                 parent = parent.parentNode;
            }
-           
+
             // Load the content of the page referenced in the a-tags href
-           $("#docsContent").load(location.href);
+           $("#docsContent").load(previous_url);
         }
     });
 
