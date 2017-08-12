@@ -67,6 +67,8 @@ You can also add other hosts into a container’s /etc/hosts file by using one o
 
 ### 5) Run docker container
 
+
+
 ### Memory for MySQL
 MySQL requires a lot of memory in order to run well.   Currently there is not a consistent way to check on the container memory limit. The ```-e MEM=size_in_GB`` should be specified in gigabytes (e.g. 16 for 16GB of RAM).   If you fail to supply this variable, the default will use **/proc/meminfo** .  In other words, the default is to assume no memory limit. 
 
@@ -76,21 +78,23 @@ Below table lists the environment variables that can be used with ``docker -e <n
 
 NAME | Value | Details
 :---- | ----- |:-------
-**KAFKA\_FQDN** | hostname | **REQUIRED**. Fully qualified hostname for the docker host of this container. Will be used for API and Kafka. It is also the default OPENBMP_ADMIN_ID.
+**KAFKA\_FQDN** | hostname | **REQUIRED**. Fully qualified hostname that can be resolved inside docker container (e.g. ```localhost```).
 MEM | RAM in GB | The size of RAM allowed for container in gigabytes. (e.g. ```-e MEM=15```)
 GROUP\_ID | string | The Kafka consumer group ID, default is 'openbmp-mysql-consumer'
 MYSQL\_ROOT\_PASSWORD | password | MySQL root user password.  The default is **OpenBMP**.  The root password can be changed using [standard MySQL instructions](https://dev.mysql.com/doc/refman/5.6/en/resetting-permissions.html).  If you do change the password, you will need to run the container with this env set.
 MYSQL\_OPENBMP\_PASSWORD | password | MySQL openbmp user password.  The default is **openbmp**.  You can change the default openbmp user password using [standard mysql instructions](https://dev.mysql.com/doc/refman/5.6/en/set-password.html).  If you change the openbmp user password you MUST use this env.  
 
+- - -
+
+### **IMPORTANT:**
+#### • You **MUST define the KAFKA_FQDN** as a **'hostname'** that can be resolved inside the docker container.
+#### • We recommend to set it to 'localhost' (or '127.0.0.1') if you are not planning to have your own clients (consumers or producers) outside this container.
+#### • KAFKA_FQDN is used by Kafka to advertise the leader (advertised.host.name) which handles all read and write requests for a partition. If it can not be resolved, there will be no messages published or consumed (without a clear error message in the logs).
+#### • **If** you are planning to have **your own clients outside the container** that need access to Kafka running inside the docker container,  then the 'hostname' must be resolvable inside the container as well as on the hosts where the container and the clients are running.
+
+- - -
+
 #### Run normally
-
-- - -
-
-### **IMPORTANT:** You **MUST define the KAFKA_FQDN** as a **'hostname'** (or fqdn) and not by IP. 
-#### If all containers are running on the same node, this hostname can be local specific, such as 'localhost' or 'myhost'. 
-#### If Kafka is running on a different server than the consumers and producers, then the KAFKA_FQDN should be a valid hostname that can be resolved using DNS. This can be internal DNS or manually done by updating the /etc/hosts file on each machine.
-
-- - -
 
     docker run -d --name=openbmp_mysql -e KAFKA_FQDN=localhost -e MEM=15 \
          -v /var/openbmp/mysql:/data/mysql -v /var/openbmp/config:/config \
