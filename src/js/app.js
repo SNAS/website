@@ -74,7 +74,7 @@ jQuery(document).ready(function() {
             return true;
         }
 
-        history.pushState({page:$(this).attr("href")}, null, $(this).attr("href"));
+        history.pushState({page:$(this).attr("href")}, null, null);
 
         previous_url = $(this).attr("href");
         $("#docsContent").load($(this).attr("href"));
@@ -85,15 +85,13 @@ jQuery(document).ready(function() {
         // Prevent browsers default behavior to follow the link when clicked
         $('#sidebar').find("a").removeClass('active');
         $(this).addClass('active');
-        
+
         return false;
     });
 
 
     $(window).on('popstate', function(e) {
         if (e.originalEvent.state !== null) {
-//            console.log("popstate current: ", e.originalEvent.state.page);
-//            console.log("previous is : ", previous_url);
             $('#sidebar').find("#" + previous_url).removeClass('active');
             previous_url = e.originalEvent.state.page;
             var parent = ($('#sidebar').find("#" + previous_url))[0].parentNode;
@@ -151,7 +149,7 @@ jQuery(document).ready(function() {
               scrollTop: $( $.attr(this, 'href') ).offset().top
           }, 500);
       } else {
-          history.pushState({page:$(this).attr("href")}, null, $(this).attr("href"));
+          history.pushState({page:$(this).attr("href")}, null, null);
           previous_url = $(this).attr("href");
 
           $('#sidebar').find("a").removeClass('active');
