@@ -29,6 +29,7 @@
 .md-default pre  {
     overflow: hidden;
     margin-top: 10px;
+    font-family: monospace;
 }
 
 /* ---------------------------------
