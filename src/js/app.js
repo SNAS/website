@@ -62,7 +62,8 @@
 // Add "active" class to list-item-group when clicked.  Remove class when not active
 
 jQuery(document).ready(function() {
-    
+    var previous_url = null;
+
     $("a.list-group-item").click(function (e) {
         // e.preventDefault();
 
@@ -73,12 +74,14 @@ jQuery(document).ready(function() {
             return true;
         }
 
+        history.pushState({page:$(this).attr("href")}, null, null);
+
+        previous_url = $(this).attr("href");
         $("#docsContent").load($(this).attr("href"));
         $(window).animate({ scrollTop: 0 }, "slow");
         //$("#docsContent").html('hello');
         // $("#docsContent").load('install');
 
-        //
         // Prevent browsers default behavior to follow the link when clicked
         $('#sidebar').find("a").removeClass('active');
         $(this).addClass('active');
@@ -86,16 +89,35 @@ jQuery(document).ready(function() {
         return false;
     });
 
-  /*
-   * Handle links in "docsContent" so that relative links are opened in right pane and external are opened
-   *  in a new window.
-   *
-   *  NOTE: jQuery.load() is used to load the content in the #docsContent div.  In order to capture this event
-   *      $on('click', ...) function needs to be used so that added elements after initial document load
-   *      are handled.   See http://api.jquery.com/on/ "Delegated events" for more details.
-   *
-   *     Also see: https://stackoverflow.com/questions/14339309/jquery-click-event-handlers-dont-work-after-loading-html-page-with-load for details
-  */
+
+    $(window).on('popstate', function(e) {
+        if (e.originalEvent.state !== null) {
+            $('#sidebar').find("#" + previous_url).removeClass('active');
+            previous_url = e.originalEvent.state.page;
+            var parent = ($('#sidebar').find("#" + previous_url))[0].parentNode;
+            $("#" + previous_url).addClass('active');
+
+            while (!($(parent).hasClass("list-group"))) {
+                $(parent).collapse('show');
+                parent = parent.parentNode;
+           }
+
+            // Load the content of the page referenced in the a-tags href
+           $("#docsContent").load(previous_url);
+        }
+    });
+
+
+    /*
+     * Handle links in "docsContent" so that relative links are opened in right pane and external are opened
+     *  in a new window.
+     *
+     *  NOTE: jQuery.load() is used to load the content in the #docsContent div.  In order to capture this event
+     *      $on('click', ...) function needs to be used so that added elements after initial document load
+     *      are handled.   See http://api.jquery.com/on/ "Delegated events" for more details.
+     *
+     *     Also see: https://stackoverflow.com/questions/14339309/jquery-click-event-handlers-dont-work-after-loading-html-page-with-load for details
+    */
   // The below will handle click events for the <div id="docsContent"> <a> links
   $("div#docsContent").on('click',"a", function(e) {
     // $(document).on('click',"#docsContent a", function(e) {       // This is an alternate to the above.
@@ -122,15 +144,18 @@ jQuery(document).ready(function() {
       // Default action for local tag refs (e.g. #tag)
       if ($(this).attr("href").startsWith("#")) {
           // Prevent browsers default behavior to follow the link when clicked
+
           $('html, body').animate({
               scrollTop: $( $.attr(this, 'href') ).offset().top
           }, 500);
       } else {
+          history.pushState({page:$(this).attr("href")}, null, null);
+          previous_url = $(this).attr("href");
+
           $('#sidebar').find("a").removeClass('active');
 
           $("#"+$(this).attr("href")).addClass('active');
           // Prevent browsers default behavior to follow the link when clicked
-
           $("#docsContent").load($(this).attr("href"));
           $('html, body').animate({ scrollTop: 0 }, "slow");
       }
