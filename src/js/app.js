@@ -77,7 +77,7 @@ jQuery(document).ready(function() {
         history.pushState({page:$(this).attr("href")}, null, null);
 
         previous_url = $(this).attr("href");
-        $("#docsContent").load($(this).attr("href"));
+        $("#docsContent").load($(this).attr("href") + " #content");
         $(window).animate({ scrollTop: 0 }, "slow");
         //$("#docsContent").html('hello');
         // $("#docsContent").load('install');
@@ -103,7 +103,7 @@ jQuery(document).ready(function() {
            }
 
             // Load the content of the page referenced in the a-tags href
-           $("#docsContent").load(previous_url);
+           $("#docsContent").load(previous_url + " #content");
         }
     });
 
@@ -156,7 +156,7 @@ jQuery(document).ready(function() {
 
           $("#"+$(this).attr("href")).addClass('active');
           // Prevent browsers default behavior to follow the link when clicked
-          $("#docsContent").load($(this).attr("href"));
+          $("#docsContent").load($(this).attr("href") + " #content");
           $('html, body').animate({ scrollTop: 0 }, "slow");
       }
     }
