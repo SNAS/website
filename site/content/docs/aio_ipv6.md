@@ -33,12 +33,12 @@ See [PAT Configuration](#pat-configuration) for more details on how to enable th
 
 > #### NOTE:
 > You can enable docker in bridged mode to configure the container with a real IPv6 address.  This document does not
-> detail how to do that since the primary install of SNAS AIO is in a hosted environment (e.g. AWS) where the glboal IPv6
+> detail how to do that since the primary install of SNAS AIO is in a hosted environment (e.g. AWS) where the global IPv6
 > address needs to be shared between the host VM and the AIO container. 
 
 ## Configure AIO to accept IPv6
 
-By default the AIO container only listens for IPv4 connections.  You can enable the AIO container/collector to listen for IPv6 connections by following the following steps.
+By default the AIO container only listens for IPv4 connections.  You can enable the AIO container/collector to listen for IPv6 connections by following the below steps.
 
 ### Steps
 
