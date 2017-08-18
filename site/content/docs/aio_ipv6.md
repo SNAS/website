@@ -63,13 +63,15 @@ Follow these steps to configure a current [install of docker](https://docs.docke
 
 ### Steps
 
-1. Edit ```/etc/default/docker``` and update ```DOCKER_OPTS``` variable by adding ```"--ipv6 --fixed-cidr-v6='fc00:172:17:0:0::/64'"```.  
-    
-    **For example:**
-    
-    ```sh
-    DOCKER_OPTS="--ipv6 --fixed-cidr-v6='fc00:172:17:0:0::/64'"
-    ```
+1. Edit/create ```/etc/docker/daemon.json``` and add the following JSON settings: 
+
+```json
+{
+    "ipv6": true,
+    "fixed-cidr-v6": "fc00:172:17:0:0::/64"
+}
+```
+
     
 1. Restart docker using: ```service restart docker```
 
@@ -88,6 +90,7 @@ Follow these steps to configure a current [install of docker](https://docs.docke
  
     # Add the DNAT rule
     ip6tables -t nat -A PREROUTING \! -i docker0 -p tcp -m tcp --dport 8001 -j DNAT --to-destination "[${addr}]:8001"
+    ip6tables -t nat -A PREROUTING \! -i docker0 -p tcp -m tcp --dport 5000 -j DNAT --to-destination "[${addr}]:5000"
     ```
 1. Verify that it looks good
     1. ```ps -ef | grep docker``` should show the new docker options for IPv6
