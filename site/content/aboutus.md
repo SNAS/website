@@ -7,6 +7,8 @@ title: "About Us"
 
 <p/>
 
+[![SNAS General chat](https://badges.gitter.im/snas/general.png)](https://gitter.im/snas/general)
+
 ## Contributors
 
 Contributions can be made via pull requests on github. 
