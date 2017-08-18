@@ -54,6 +54,9 @@ menu:
             - href: install_mysql
               label: MySQL Docker
               parent: '#install_sub_menu'
+            - href: aio_ipv6
+              label: AIO IPv6 Configuration
+              parent: '#install_sub_menu'
         - href: install_ubuntu
           label: Ubuntu Install
           parent: '#getting_started'
