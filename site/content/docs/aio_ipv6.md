@@ -73,7 +73,7 @@ Follow these steps to configure a current [install of docker](https://docs.docke
 ```
 
     
-1. Restart docker using: ```service restart docker```
+1. Restart docker using: ```service docker restart```
 
     > **BEWARE**: This will stop all running containers
     
