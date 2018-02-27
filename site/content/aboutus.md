@@ -13,6 +13,15 @@ The project is licensed under [Eclipse Public License v1.0](http://www.eclipse.o
 
 [![SNAS General chat](https://badges.gitter.im/snas/general.png)](https://gitter.im/snas/general)
 
+## Discussions/Support/Contacts
+
+Email | Details
+----- | -------
+**main@snas.groups.io** | General SNAS related items
+**discuss@snas.groups.io** | Discussions regarding SNAS features, roadmap, issues
+
+
+
 ## Contributors
 
 Contributions can be made via pull requests on github. 
@@ -21,8 +30,11 @@ Contributions can be made via pull requests on github.
 * [OpenBMP Github](https://github.com/snas)
 
 
-Name| Email | Role
-----| ----- | ----
-Tim Evens| **tievens@cisco.com** | Active Primary
-Serpil Bayraktar | **serpil@cisco.com** | Active Primary
-Manish Bhardwaj | **manbhard@cisco.com** | Active Primary
+
+
+
+Name | Role
+---- | ----
+Tim Evens|  Active Primary
+Serpil Bayraktar | Active Primary
+Manish Bhardwaj |  Active Primary
