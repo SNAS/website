@@ -164,7 +164,6 @@ jQuery(document).ready(function() {
     // Return false to disable the default action
     return false;
   } );
-});
     /*
      * Fix relative doc links when docs are accessed directly
      *    For example [BUILD](build) will become "/docs/build"
@@ -185,3 +184,4 @@ jQuery(document).ready(function() {
         }
 
     });
+});
