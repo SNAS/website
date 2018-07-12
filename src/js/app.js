@@ -165,3 +165,23 @@ jQuery(document).ready(function() {
     return false;
   } );
 });
+    /*
+     * Fix relative doc links when docs are accessed directly
+     *    For example [BUILD](build) will become "/docs/build"
+     *
+     *    For now links within the DIV id "content" will be updated if they do not contain
+     *    a slash.
+     */
+    $("div#content").on('click',"a", function(e) {
+        console.log("content link clicked: ", $(this).attr("href"));
+
+        var url = $(this).attr("href");
+
+        if ($(this).attr("href").includes("/")) {
+            return true;
+
+        } else {
+            $(this).attr("href", "/docs/" + url);
+        }
+
+    });
