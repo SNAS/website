@@ -37,16 +37,18 @@ pluralizelisttitles = false
     heading = "Get Started"
     text = "You can start using SNAS without any data feed of your own! We provide an application that downloads publicly available BGP data which you can immediately visualize using SNAS.io UI."
     button_text = "Start Now"
-    button_link = "/gettingstarted"
+    button_link = "/docs/quick_start"
 
 [Params.two_up]
     heading = "Developer Integration"
     description = "Integrate your existing applications and management framework or write a new application using standard Kafka message bus or native and RESTful database APIs."
+
     svg1 = "img/icons2/Message_Bus-01.svg"
     text1 = "Message Bus Integration gives direct access to the data produced by the collector. SNAS provides a utility to make Message Bus topic structure customizable. Tools like kafkacat makes it very easy to expriment with data integration."
     button_text1 = "Read More"
-    button_link1 = "/message_bus_integration"
+    button_link1 = "/docs/message_bus_api"
+
     svg2 = "/img/icons2/Database_API-01.svg"
-    text2 = "Native or RESTful integration with the database gives you access to raw as well as analyzed data. The database is optimized to provide very fast response to most commonly needed analytics."
+    text2 = "Native  integration with the database gives you access to raw as well as analyzed data. The database is optimized to provide very fast response to most commonly needed analytics."
     button_text2 = "Read More"
     button_link2 = "/rest_integration"

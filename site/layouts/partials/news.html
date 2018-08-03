@@ -1,0 +1,45 @@
+<div class="bg-off-white pv4">
+
+	<!--Tablet and desktop version-->
+	<div class="ph3 mw7 center db-ns dn">
+		<h2 class="f2 b lh-title mb1">Latest News</h2>
+
+		<div class="flex-ns mhn2-ns text-muted">
+
+			{{ range first 3 (where .Pages "Section" "news").ByDate.Reverse }}
+
+				<div class="ph3-ns w-100-ns">
+					<p class="i"> {{ .Date.Format "Mon, Jan 2, 2006" }} </p>
+
+					{{.Summary}}
+				</div>
+
+			{{ end }}
+		</div>
+	</div>
+
+<!--Mobile version-->
+	<div class="ph3 mw7 center dn-ns">
+		<h2 class="f2 b lh-title mb1">Latest News</h2>
+
+		<div class="flex-ns mhn2-ns text-muted">
+
+			{{ range first 3 (where .Pages "Section" "news").ByDate.Reverse }}
+
+				<div class="ph2-ns w-100-ns mb5">
+					<p class="i mb2">{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
+					{{.Summary}}
+
+				</div>
+			{{ end }}
+
+		</div>
+
+	</div>
+
+	<div class="tc">
+		<a href="/news" class="btn raise">Read more</a>
+	</div>
+
+
+</div>
