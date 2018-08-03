@@ -35,6 +35,4 @@ Contributions can be made via pull requests on github.
 
 Name | Role
 ---- | ----
-Tim Evens|  Active Primary
-Serpil Bayraktar | Active Primary
-Manish Bhardwaj |  Active Primary
+Tim Evens| Owner/Contributor
