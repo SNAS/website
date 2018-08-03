@@ -9,4 +9,4 @@ New Grafana dashboards using PostgreSQL
 <!--more-->
 
 All dashboards have been redesigned and updated to support the PostgreSQL backend. 
-Check out [Grafana Demo](http://localhost:3000/demo/demo-grafana/)
+Check out [Grafana Demo](http://rv-obmp.cisco.com:3000/demo/demo-grafana/)
