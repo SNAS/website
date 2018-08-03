@@ -9,7 +9,7 @@ This is a fully functional demo using live data from RouteViews.
 
 <!--more-->
 
-[Take me to the demo!](http://demo-rv.snas.io:3000/)
+[Take me to the demo!](http://rv-obmp.cisco.com:3000/)
 
 
 ## Dashboards
