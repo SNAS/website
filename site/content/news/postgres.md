@@ -1,12 +1,32 @@
 ---
-title: "PostgreSQL and TimescaleDB"
-date: 2018-08-03T15:00:00.000Z
+title: "PostgreSQL, TimescaleDB and Grafana"
+date: 2018-08-15T17:00:00.000Z
 ---
 
 
-Coming soon... Better network monitoring and analytics with **PostgreSQL and TimescaleDB**.
+Available Now! Better network monitoring and analytics with **PostgreSQL**, **TimescaleDB**, and **Grafana**  
 
 <!--more-->
+
+PostgreSQL with TimescaleDB, RPKI, and IRR integration is available now via [openbmp/postgres container](https://github.com/OpenBMP/docker/tree/master/postgres)
+
+The **openbmp/collector** and **openbmp/kafka** containers should be used wtih the **openbmp/postgres** containers to
+provide an end-to-end BGP monitoring and analytics.  
+
+**Grafana** is the preferred visualization tool. Grafana enables collabration with dashboards and plugins without requiring
+much development experience.  We encourge everyone to contribute new or updated dashboards and plugins via 
+github pull requests.  You can start using Grafana today with **openbmp/postgres** container by following the
+[OpenBMP Grafana instructions](https://github.com/OpenBMP/obmp-grafana/blob/master/README.md). 
+
+> #### NOTE:
+> At this time there is full support for IPv4, IPv6 unicast and labeled unicast address families.
+> Soon to come will be L3VPN, Link-State, and EVPN. 
+
+Please [Join the chat on Gitter](https://gitter.im/OpenBMP/obmp-grafana?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
+to collaborate with others interactively.  
+
+
+- - -  
 
 OpenBMP collectors produce parsed/translated BGP messages to Kafka for many applications to consume.  This 
 follows the *"produce once and consume by many"* model. 
@@ -59,7 +79,8 @@ In addition to resolving the above shotcomings...
  
 - **Better scale**: The current RouteViews data set (demo) has over **141,000,000** prefixes being monitored and over 
   **175,600,000** advertisements/withdrawals logged per day.  Postgres and TimescaleDB
-  perform well enough to keep up with this scale while supporting the complex aggregations. 
+  perform well enough to keep up with this scale while supporting the complex aggregations, using less
+  than 64GB RAM and less than 24 vCPU's on a single server.  The server does have two 1TB SSD disks.
  
   
 - **Customizable retention policies**: TimescaleDB provides a simple method to purge old data, such as ```SELECT drop_chunks(interval '3 months', 'conditions');```. 
